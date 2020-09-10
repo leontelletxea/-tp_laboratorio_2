@@ -19,43 +19,43 @@ namespace MiCalculadora
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
-            comboBox1.SelectedItem = 0;
+            cmbOperador.SelectedItem = 0;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnOperar_Click(object sender, EventArgs e)
         {
-            double numberOne, numberTwo, outcome;
+            double outcome;
             string selectedOperator;
 
-            selectedOperator = comboBox1.Text;
-            Numero Number1 = new Numero(textBox1.Text);
-            Numero Number2 = new Numero(textBox2.Text);
-            outcome = Calculadora.Operar(Number1, Number2, selectedOperator);
+            selectedOperator = cmbOperador.Text;
+            Numero numberOne = new Numero(txtNumero1.Text);
+            Numero numberTwo = new Numero(txtNumero2.Text);
+            outcome = Calculadora.Operar(numberOne, numberTwo, selectedOperator);
 
-            label1.Text = outcome.ToString();
+            lblResultado.Text = outcome.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            label1.Text = "";
-            comboBox1.SelectedItem = 0;
+            txtNumero1.Text = "";
+            txtNumero2.Text = "";
+            lblResultado.Text = "";
+            cmbOperador.SelectedItem = 0;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Numero number = new Numero();
-            label1.Text = number.DecimalBinario(textBox1.Text);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             Numero number = new Numero();
-            label1.Text = number.BinarioDecimal(textBox1.Text);
+            lblResultado.Text = number.DecimalBinario(txtNumero1.Text);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnConvertirADecimal_Click(object sender, EventArgs e)
+        {
+            Numero number = new Numero();
+            lblResultado.Text = number.BinarioDecimal(txtNumero1.Text);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

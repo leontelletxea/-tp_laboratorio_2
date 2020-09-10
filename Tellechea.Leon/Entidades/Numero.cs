@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Nº1_2020
+namespace Entidades
 {
-    class Numero
+    public class Numero
     {
         private double numero;
 
-        public void SetNumero(string strNumber)
+        public string SetNumero
         {
-            double number = ValidarNumero(strNumber);
-
-            numero = number;
+            /** get { return SetNumero; } */
+            set { numero = ValidarNumero(value); }
         }
 
         public string BinarioDecimal(string binario)
@@ -24,11 +23,11 @@ namespace TP_Nº1_2020
             string auxiliar;
             char[] array = binario.ToCharArray();
 
-            if(EsBinario(binario) == true)
+            if (EsBinario(binario) == true)
             {
                 Array.Reverse(array);
 
-                for (i=0; i<array.Length; i++)
+                for (i = 0; i < array.Length; i++)
                 {
                     if (array[i] == '1')
                     {
@@ -46,9 +45,16 @@ namespace TP_Nº1_2020
             return auxiliar;
         }
 
+        private static string ReverseArray(string chain)
+        {
+            char[] array = chain.ToCharArray();
+            Array.Reverse(array);
+            return new string(array);
+        }
+
         public string DecimalBinario(double numero)
         {
-            int convertedNumber = Convert.ToInt32(numero);
+            int convertedNumber = (int)Math.Abs(numero);
             string chain = "";
             string auxiliar = "";
 
@@ -66,9 +72,10 @@ namespace TP_Nº1_2020
                     }
                     convertedNumber = convertedNumber / 2;
                 }
+                chain = ReverseArray(chain);
             }
             else if (convertedNumber == 0)
-            { 
+            {
                 chain = "0";
             }
             else
@@ -83,37 +90,19 @@ namespace TP_Nº1_2020
 
         public string DecimalBinario(string binario)
         {
-            int convertedNumber = Convert.ToInt32(binario);
-            string chain = "";
-            string auxiliar = "";
+            double convertedNumber;
+            string chain;
 
-            if (convertedNumber > 0)
+            if (double.TryParse(binario, out convertedNumber))
             {
-                while (convertedNumber > 0)
-                {
-                    if (convertedNumber % 2 == 0)
-                    {
-                        chain += "0";
-                    }
-                    else
-                    {
-                        chain += "1";
-                    }
-                    convertedNumber = convertedNumber / 2;
-                }
-            }
-            else if (convertedNumber == 0)
-            {
-                chain = "0";
+                chain = DecimalBinario(convertedNumber);
             }
             else
             {
                 chain = "Valor inválido";
             }
 
-            auxiliar = chain;
-
-            return auxiliar;
+            return chain;
         }
 
         private bool EsBinario(string numero)
@@ -121,9 +110,9 @@ namespace TP_Nº1_2020
             int i;
             bool flag = true;
 
-            for (i=0; i<numero.Length; i++)
+            for (i = 0; i < numero.Length; i++)
             {
-                if(numero[i] != '0' || numero[i] != '1')
+                if (numero[i] != '0' && numero[i] != '1')
                 {
                     flag = false;
                     break;
@@ -138,33 +127,33 @@ namespace TP_Nº1_2020
             numero = 0;
         }
 
-        public Numero(double numero)
+        public Numero(double dblNumero)
         {
-           
+            numero = dblNumero;
         }
 
         public Numero(string strNumero)
         {
-
+            SetNumero = strNumero;
         }
 
         public static double operator -(Numero n1, Numero n2)
         {
-            return n1 - n2;
+            return n1.numero - n2.numero;
         }
 
         public static double operator *(Numero n1, Numero n2)
         {
-            return n1 * n2;
+            return n1.numero * n2.numero;
         }
 
         public static double operator /(Numero n1, Numero n2)
         {
             double outcome;
 
-            if(Convert.ToDouble(n2) != 0)
+            if (n2.numero != 0)
             {
-                outcome = n1 - n2;
+                outcome = n1.numero / n2.numero;
             }
             else
             {
@@ -176,7 +165,7 @@ namespace TP_Nº1_2020
 
         public static double operator +(Numero n1, Numero n2)
         {
-            return n1 + n2;
+            return n1.numero + n2.numero;
         }
 
         private double ValidarNumero(string strNumero)
@@ -184,7 +173,7 @@ namespace TP_Nº1_2020
             double convertedNumber;
             double returnNumber;
 
-            if(double.TryParse(strNumero, out convertedNumber) == true)
+            if (double.TryParse(strNumero, out convertedNumber) == true)
             {
                 returnNumber = convertedNumber;
             }
@@ -195,6 +184,6 @@ namespace TP_Nº1_2020
 
             return convertedNumber;
         }
-        
+
     }
 }

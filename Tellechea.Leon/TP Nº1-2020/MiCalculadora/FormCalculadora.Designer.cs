@@ -44,6 +44,7 @@ namespace MiCalculadora
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(333, 178);
@@ -57,6 +58,7 @@ namespace MiCalculadora
             // btnConvertirADecimal
             // 
             this.btnConvertirADecimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
+            this.btnConvertirADecimal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConvertirADecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvertirADecimal.ForeColor = System.Drawing.Color.White;
             this.btnConvertirADecimal.Location = new System.Drawing.Point(409, 277);
@@ -70,6 +72,7 @@ namespace MiCalculadora
             // btnConvertirABinario
             // 
             this.btnConvertirABinario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
+            this.btnConvertirABinario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConvertirABinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvertirABinario.ForeColor = System.Drawing.Color.White;
             this.btnConvertirABinario.Location = new System.Drawing.Point(172, 277);
@@ -83,6 +86,7 @@ namespace MiCalculadora
             // btnOperar
             // 
             this.btnOperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
+            this.btnOperar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOperar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOperar.ForeColor = System.Drawing.Color.White;
             this.btnOperar.Location = new System.Drawing.Point(172, 178);
@@ -96,6 +100,7 @@ namespace MiCalculadora
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.Location = new System.Drawing.Point(492, 178);
@@ -109,18 +114,21 @@ namespace MiCalculadora
             // txtNumero1
             // 
             this.txtNumero1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtNumero1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumero1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero1.ForeColor = System.Drawing.Color.White;
             this.txtNumero1.Location = new System.Drawing.Point(172, 108);
             this.txtNumero1.Name = "txtNumero1";
-            this.txtNumero1.Size = new System.Drawing.Size(100, 29);
+            this.txtNumero1.Size = new System.Drawing.Size(100, 35);
             this.txtNumero1.TabIndex = 10;
             this.txtNumero1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNumero1.TextChanged += new System.EventHandler(this.txtNumero1_TextChanged);
             // 
             // cmbOperador
             // 
             this.cmbOperador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.cmbOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOperador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOperador.ForeColor = System.Drawing.Color.White;
             this.cmbOperador.FormattingEnabled = true;
             this.cmbOperador.Items.AddRange(new object[] {
@@ -131,14 +139,14 @@ namespace MiCalculadora
             "/"});
             this.cmbOperador.Location = new System.Drawing.Point(350, 108);
             this.cmbOperador.Name = "cmbOperador";
-            this.cmbOperador.Size = new System.Drawing.Size(100, 32);
+            this.cmbOperador.Size = new System.Drawing.Size(100, 37);
             this.cmbOperador.TabIndex = 7;
             this.cmbOperador.SelectedIndexChanged += new System.EventHandler(this.cmbOperador_SelectedIndexChanged);
             // 
             // lblResultado
             // 
             this.lblResultado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultado.ForeColor = System.Drawing.Color.White;
             this.lblResultado.Location = new System.Drawing.Point(344, 40);
             this.lblResultado.Name = "lblResultado";
@@ -149,11 +157,12 @@ namespace MiCalculadora
             // txtNumero2
             // 
             this.txtNumero2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtNumero2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumero2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero2.ForeColor = System.Drawing.Color.White;
             this.txtNumero2.Location = new System.Drawing.Point(529, 108);
             this.txtNumero2.Name = "txtNumero2";
-            this.txtNumero2.Size = new System.Drawing.Size(100, 29);
+            this.txtNumero2.Size = new System.Drawing.Size(100, 35);
             this.txtNumero2.TabIndex = 9;
             this.txtNumero2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

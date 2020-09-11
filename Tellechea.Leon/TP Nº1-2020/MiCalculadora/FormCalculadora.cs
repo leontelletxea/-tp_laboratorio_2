@@ -51,7 +51,7 @@ namespace MiCalculadora
             txtNumero1.Text = "";
             txtNumero2.Text = "";
             lblResultado.Text = "";
-            cmbOperador.Text = "";
+            cmbOperador.Text = " ";
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -79,6 +79,11 @@ namespace MiCalculadora
         }
 
         private void cmbOperador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumero1_TextChanged(object sender, EventArgs e)
         {
 
         }

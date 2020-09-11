@@ -11,8 +11,12 @@ namespace Entidades
         public static double Operar(Numero num1, Numero num2, string operador)
         {
             double outcome = 0;
+            char charsito;
+            if (char.TryParse(operador, out charsito)==true)
+            {
+                string Validatedoperator = ValidarOperador(charsito);
 
-            switch (operador)
+            switch (Validatedoperator)
             {
                 case "+":
                     outcome = num1 + num2;
@@ -26,9 +30,11 @@ namespace Entidades
                 case "*":
                     outcome = num1 * num2;
                     break;
-                default:
-                    outcome = num1 + num2;
-                    break;
+            }
+            }
+            else
+            {
+                outcome = num1 + num2;
             }
 
             return outcome;

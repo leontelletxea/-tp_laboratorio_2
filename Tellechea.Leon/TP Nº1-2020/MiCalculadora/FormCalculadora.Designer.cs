@@ -43,12 +43,12 @@ namespace MiCalculadora
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(254)))), ((int)(((byte)(76)))));
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(344, 178);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(333, 178);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(110, 52);
+            this.btnLimpiar.Size = new System.Drawing.Size(137, 41);
             this.btnLimpiar.TabIndex = 0;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -56,12 +56,12 @@ namespace MiCalculadora
             // 
             // btnConvertirADecimal
             // 
-            this.btnConvertirADecimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(254)))), ((int)(((byte)(76)))));
+            this.btnConvertirADecimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
             this.btnConvertirADecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertirADecimal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnConvertirADecimal.Location = new System.Drawing.Point(453, 277);
+            this.btnConvertirADecimal.ForeColor = System.Drawing.Color.White;
+            this.btnConvertirADecimal.Location = new System.Drawing.Point(409, 277);
             this.btnConvertirADecimal.Name = "btnConvertirADecimal";
-            this.btnConvertirADecimal.Size = new System.Drawing.Size(176, 65);
+            this.btnConvertirADecimal.Size = new System.Drawing.Size(220, 56);
             this.btnConvertirADecimal.TabIndex = 1;
             this.btnConvertirADecimal.Text = "Convertir a Decimal";
             this.btnConvertirADecimal.UseVisualStyleBackColor = false;
@@ -69,12 +69,12 @@ namespace MiCalculadora
             // 
             // btnConvertirABinario
             // 
-            this.btnConvertirABinario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(254)))), ((int)(((byte)(76)))));
+            this.btnConvertirABinario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
             this.btnConvertirABinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertirABinario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnConvertirABinario.ForeColor = System.Drawing.Color.White;
             this.btnConvertirABinario.Location = new System.Drawing.Point(172, 277);
             this.btnConvertirABinario.Name = "btnConvertirABinario";
-            this.btnConvertirABinario.Size = new System.Drawing.Size(160, 65);
+            this.btnConvertirABinario.Size = new System.Drawing.Size(220, 56);
             this.btnConvertirABinario.TabIndex = 2;
             this.btnConvertirABinario.Text = "Convertir a Binario";
             this.btnConvertirABinario.UseVisualStyleBackColor = false;
@@ -82,12 +82,12 @@ namespace MiCalculadora
             // 
             // btnOperar
             // 
-            this.btnOperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(254)))), ((int)(((byte)(76)))));
+            this.btnOperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
             this.btnOperar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOperar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnOperar.ForeColor = System.Drawing.Color.White;
             this.btnOperar.Location = new System.Drawing.Point(172, 178);
             this.btnOperar.Name = "btnOperar";
-            this.btnOperar.Size = new System.Drawing.Size(133, 52);
+            this.btnOperar.Size = new System.Drawing.Size(137, 41);
             this.btnOperar.TabIndex = 3;
             this.btnOperar.Text = "Operar";
             this.btnOperar.UseVisualStyleBackColor = false;
@@ -95,12 +95,12 @@ namespace MiCalculadora
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(254)))), ((int)(((byte)(76)))));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnCerrar.Location = new System.Drawing.Point(501, 178);
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(492, 178);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(128, 52);
+            this.btnCerrar.Size = new System.Drawing.Size(137, 41);
             this.btnCerrar.TabIndex = 4;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -129,9 +129,9 @@ namespace MiCalculadora
             "-",
             "*",
             "/"});
-            this.cmbOperador.Location = new System.Drawing.Point(367, 108);
+            this.cmbOperador.Location = new System.Drawing.Point(350, 108);
             this.cmbOperador.Name = "cmbOperador";
-            this.cmbOperador.Size = new System.Drawing.Size(87, 32);
+            this.cmbOperador.Size = new System.Drawing.Size(100, 32);
             this.cmbOperador.TabIndex = 7;
             this.cmbOperador.SelectedIndexChanged += new System.EventHandler(this.cmbOperador_SelectedIndexChanged);
             // 

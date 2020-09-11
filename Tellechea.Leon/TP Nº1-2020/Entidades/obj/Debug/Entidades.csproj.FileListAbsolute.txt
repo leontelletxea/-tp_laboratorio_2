@@ -4,3 +4,9 @@ C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.
 C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Entidades\obj\Debug\Entidades.dll
 C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP Nº1-2020\Entidades\bin\Debug\Entidades.dll
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP Nº1-2020\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP Nº1-2020\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP Nº1-2020\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP Nº1-2020\Entidades\obj\Debug\Entidades.dll
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP Nº1-2020\Entidades\obj\Debug\Entidades.pdb

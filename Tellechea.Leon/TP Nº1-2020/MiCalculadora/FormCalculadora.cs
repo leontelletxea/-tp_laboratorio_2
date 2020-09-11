@@ -22,6 +22,17 @@ namespace MiCalculadora
             cmbOperador.SelectedItem = 0;
         }
 
+        private static double Operar(string numero1, string numero2, string operador)
+        {
+            double outcome;
+
+            Numero numberOne = new Numero(numero1);
+            Numero numberTwo = new Numero(numero2);
+
+            outcome = Calculadora.Operar(numberOne, numberTwo, operador);
+
+            return outcome;
+        }
         private void btnOperar_Click(object sender, EventArgs e)
         {
             double outcome;
@@ -30,34 +41,46 @@ namespace MiCalculadora
             selectedOperator = cmbOperador.Text;
             Numero numberOne = new Numero(txtNumero1.Text);
             Numero numberTwo = new Numero(txtNumero2.Text);
+           
             outcome = Calculadora.Operar(numberOne, numberTwo, selectedOperator);
 
             lblResultado.Text = outcome.ToString();
         }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void Limpiar()
         {
             txtNumero1.Text = "";
             txtNumero2.Text = "";
             lblResultado.Text = "";
-            cmbOperador.SelectedItem = 0;
+            cmbOperador.Text = "";
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             Numero number = new Numero();
+
             lblResultado.Text = number.DecimalBinario(txtNumero1.Text);
         }
 
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             Numero number = new Numero();
+
             lblResultado.Text = number.BinarioDecimal(txtNumero1.Text);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbOperador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

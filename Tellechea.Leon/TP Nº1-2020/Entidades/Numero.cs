@@ -12,7 +12,6 @@ namespace Entidades
 
         public string SetNumero
         {
-            /** get { return SetNumero; } */
             set { numero = ValidarNumero(value); }
         }
 
@@ -34,7 +33,6 @@ namespace Entidades
                         accumulator += (int)Math.Pow(2, i);
                     }
                 }
-
                 auxiliar = Convert.ToString(accumulator);
             }
             else
@@ -48,7 +46,9 @@ namespace Entidades
         private static string ReverseArray(string chain)
         {
             char[] array = chain.ToCharArray();
+
             Array.Reverse(array);
+
             return new string(array);
         }
 
@@ -171,15 +171,15 @@ namespace Entidades
         private double ValidarNumero(string strNumero)
         {
             double convertedNumber;
-            double returnNumber;
+            double returnValue;
 
             if (double.TryParse(strNumero, out convertedNumber) == true)
             {
-                returnNumber = convertedNumber;
+                returnValue = convertedNumber;
             }
             else
             {
-                returnNumber = 0;
+                returnValue = 0;
             }
 
             return convertedNumber;

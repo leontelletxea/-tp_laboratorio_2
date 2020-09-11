@@ -26,6 +26,9 @@ namespace Entidades
                 case "*":
                     outcome = num1 * num2;
                     break;
+                default:
+                    outcome = num1 + num2;
+                    break;
             }
 
             return outcome;
@@ -33,28 +36,28 @@ namespace Entidades
 
         private static string ValidarOperador(char operador)
         {
-            string valueReturn;
+            string returnValue;
 
             switch (operador)
             {
                 case '+':
-                    valueReturn = Convert.ToString(operador);
+                    returnValue = Convert.ToString(operador);
                     break;
                 case '-':
-                    valueReturn = Convert.ToString(operador);
+                    returnValue = Convert.ToString(operador);
                     break;
                 case '/':
-                    valueReturn = Convert.ToString(operador);
+                    returnValue = Convert.ToString(operador);
                     break;
                 case '*':
-                    valueReturn = Convert.ToString(operador);
+                    returnValue = Convert.ToString(operador);
                     break;
                 default:
-                    valueReturn = "+";
+                    returnValue = "+";
                     break;
             }
 
-            return valueReturn;
+            return returnValue;
         }
     }
 }

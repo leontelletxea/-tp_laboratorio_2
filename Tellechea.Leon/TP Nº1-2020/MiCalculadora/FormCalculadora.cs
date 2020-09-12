@@ -63,14 +63,14 @@ namespace MiCalculadora
         {
             Numero number = new Numero();
 
-            lblResultado.Text = number.DecimalBinario(txtNumero1.Text);
+            lblResultado.Text = number.DecimalBinario(lblResultado.Text);
         }
 
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             Numero number = new Numero();
 
-            lblResultado.Text = number.BinarioDecimal(txtNumero1.Text);
+            lblResultado.Text = number.BinarioDecimal(lblResultado.Text);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

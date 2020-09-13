@@ -36,13 +36,11 @@ namespace MiCalculadora
         private void btnOperar_Click(object sender, EventArgs e)
         {
             double outcome;
-            string selectedOperator;
+            string selectedOperator = cmbOperador.Text;
+            string numberOne = txtNumero1.Text;
+            string numberTwo = txtNumero2.Text;
 
-            selectedOperator = cmbOperador.Text;
-            Numero numberOne = new Numero(txtNumero1.Text);
-            Numero numberTwo = new Numero(txtNumero2.Text);
-           
-            outcome = Calculadora.Operar(numberOne, numberTwo, selectedOperator);
+            outcome = Operar(numberOne, numberTwo, selectedOperator);
 
             lblResultado.Text = outcome.ToString();
         }
@@ -76,16 +74,6 @@ namespace MiCalculadora
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void cmbOperador_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNumero1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

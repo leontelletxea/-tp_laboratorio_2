@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entidades
 {
@@ -88,12 +84,12 @@ namespace Entidades
             return auxiliar;
         }
 
-        public string DecimalBinario(string binario)
+        public string DecimalBinario(string numero)
         {
             double convertedNumber;
             string chain;
 
-            if (double.TryParse(binario, out convertedNumber))
+            if (double.TryParse(numero, out convertedNumber) == true)
             {
                 chain = DecimalBinario(convertedNumber);
             }
@@ -105,14 +101,14 @@ namespace Entidades
             return chain;
         }
 
-        private bool EsBinario(string numero)
+        private bool EsBinario(string binario)
         {
             int i;
             bool flag = true;
 
-            for (i = 0; i < numero.Length; i++)
+            for (i = 0; i < binario.Length; i++)
             {
-                if (numero[i] != '0' && numero[i] != '1')
+                if (binario[i] != '0' && binario[i] != '1')
                 {
                     flag = false;
                     break;

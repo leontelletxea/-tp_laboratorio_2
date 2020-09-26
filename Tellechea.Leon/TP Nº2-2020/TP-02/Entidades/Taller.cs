@@ -77,7 +77,7 @@ namespace Entidades
                             sb.AppendLine(v.Mostrar());
                         }
                         break;
-                    default:
+                    case ETipo.Todos:
                         sb.AppendLine(v.Mostrar());
                         break;
                 }
@@ -96,6 +96,8 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
+            bool returnValue = false;
+
             foreach (Vehiculo v in taller.vehiculos)
             {
                 if (v == vehiculo)

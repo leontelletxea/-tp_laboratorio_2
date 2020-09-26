@@ -34,7 +34,7 @@ namespace Entidades
         /// Muestro el estacionamiento y TODOS los vehículos
         /// </summary>
         /// <returns></returns>
-        new public string ToString()
+        public override string ToString()
         {
             return this.Listar(this, ETipo.Todos);
         }

@@ -23,17 +23,17 @@ namespace Entidades
         string chasis;
         ConsoleColor color;
 
-        protected Vehiculo(EMarca marca, string chasis, ConsoleColor color)
-        {
-            this.marca = marca; 
+        protected Vehiculo(string chasis, EMarca marca, ConsoleColor color)
+        {            
             this.chasis = chasis;
+            this.marca = marca;
             this.color = color;
         }
 
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
-        public virtual ETamanio Tamanio { get; }
+        public abstract ETamanio Tamanio { get; }
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.

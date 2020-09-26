@@ -9,14 +9,20 @@ namespace Entidades
     public class Ciclomotor : Vehiculo
     {
         public Ciclomotor(EMarca marca, string chasis, ConsoleColor color)
-            : base(marca, chasis, color)
+            : base(chasis, marca, color)
         {
         }
 
     /// <summary>
     /// Las motos son chicas
     /// </summary>
-    public override ETamanio Tamanio { get => ETamanio.Chico; }
+    public override ETamanio Tamanio
+    {
+        get
+        {
+            return ETamanio.Chico; ;
+        }
+    }
 
     public override sealed string Mostrar()
         {

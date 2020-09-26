@@ -20,13 +20,13 @@ namespace Entidades
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
-            :base(marca, chasis, color)
+            : base(chasis, marca, color)
         {
             this.tipo = ETipo.Monovolumen;
         }
 
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
-            :this(marca, chasis, color)
+            : base(chasis, marca, color)
         {
             this.tipo = tipo;
         }
@@ -34,7 +34,13 @@ namespace Entidades
         /// <summary>
         /// Los automoviles son medianos
         /// </summary>
-        public override ETamanio Tamanio { get => ETamanio.Mediano; }
+        public override ETamanio Tamanio
+        {
+            get
+            {
+                return ETamanio.Mediano; ;
+            }
+        }
 
         public override sealed string Mostrar()
         {

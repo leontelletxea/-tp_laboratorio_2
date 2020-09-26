@@ -9,13 +9,19 @@ namespace Entidades
     public class Suv : Vehiculo
     {
         public Suv(EMarca marca, string chasis, ConsoleColor color)
-            :base(marca, chasis, color)
+            :base(chasis, marca, color)
         {
         }
         /// <summary>
         /// Las camionetas son grandes
         /// </summary>
-        public override ETamanio Tamanio { get => ETamanio.Grande; }
+        public override ETamanio Tamanio
+        {
+            get
+            {
+                return ETamanio.Grande; ;
+            }
+        }
 
         public override sealed string Mostrar()
         {

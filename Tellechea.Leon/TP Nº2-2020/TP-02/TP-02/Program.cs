@@ -23,7 +23,7 @@ namespace TP_02_2018
             Ciclomotor c1 = new Ciclomotor(Vehiculo.EMarca.BMW, "ASD012", ConsoleColor.Black);
             Ciclomotor c2 = new Ciclomotor(Vehiculo.EMarca.HarleyDavidson, "LEM666", ConsoleColor.Red);
             Sedan m1 = new Sedan(Vehiculo.EMarca.Toyota, "HJK789", ConsoleColor.White);
-            Sedan m2 = new Sedan(Vehiculo.EMarca.Chevrolet, "IOP852", ConsoleColor.Blue, Sedan.ETipo.CincoPuertas);
+            Sedan m2 = new Sedan(Vehiculo.EMarca.Chevrolet, "IOP852", ConsoleColor.Blue, Sedan.ETipo.Monovolumen);
             Suv a1 = new Suv(Vehiculo.EMarca.Ford, "QWE968", ConsoleColor.Gray);
             Suv a2 = new Suv(Vehiculo.EMarca.Renault, "TYU426", ConsoleColor.DarkBlue);
             Suv a3 = new Suv(Vehiculo.EMarca.BMW, "IOP852", ConsoleColor.Green);
@@ -58,19 +58,19 @@ namespace TP_02_2018
             taller += c2;
 
             // Muestro solo Moto
-            Console.WriteLine(taller.Listar(taller, Taller.ETipo.Moto));
+            Console.WriteLine(taller.Listar(taller, Taller.ETipo.Ciclomotor));
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
             Console.ReadKey();
             Console.Clear();
 
             // Muestro solo Automovil
-            Console.WriteLine(taller.Listar(taller, Taller.ETipo.Automovil));
+            Console.WriteLine(taller.Listar(taller, Taller.ETipo.Sedan));
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
             Console.ReadKey();
             Console.Clear();
 
             // Muestro solo Camioneta
-            Console.WriteLine(taller.Listar(taller, Taller.ETipo.Camioneta));
+            Console.WriteLine(taller.Listar(taller, Taller.ETipo.SUV));
             Console.WriteLine("<-------------PRESIONE UNA TECLA PARA SALIR------------->");
             Console.ReadKey();
         }

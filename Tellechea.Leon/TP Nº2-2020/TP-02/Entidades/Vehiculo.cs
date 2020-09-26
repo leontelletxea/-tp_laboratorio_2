@@ -19,19 +19,21 @@ namespace Entidades
         {
             Chico, Mediano, Grande
         }
-        public EMarca marca;
-        public string chasis;
-        public ConsoleColor color;
-        private ETamanio tamanio;
+        EMarca marca;
+        string chasis;
+        ConsoleColor color;
+
+        protected Vehiculo(EMarca marca, string chasis, ConsoleColor color)
+        {
+            this.marca = marca; 
+            this.chasis = chasis;
+            this.color = color;
+        }
 
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
-        public ETamanio Tamanio 
-        { 
-            get { return this.tamanio; }
-            set { this.tamanio = value; }
-        }
+        public virtual ETamanio Tamanio { get; }
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.
@@ -39,14 +41,7 @@ namespace Entidades
         /// <returns></returns>
         public virtual string Mostrar()
         {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine($"CHASIS: \r {this.chasis}");
-            sb.AppendLine($"MARCA : \r {this.marca.ToString()}");
-            sb.AppendLine($"COLOR : \r {this.color.ToString()}");
-            sb.AppendLine("---------------------");
-
-            return sb.ToString();
+            return (string)this;
         }
 
         public static explicit operator string(Vehiculo p)
@@ -69,14 +64,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
-            bool returnValue = false;
-
-            if(v1.chasis.ToString() == v2.chasis.ToString())
-            {
-                returnValue = true;
-            }
-
-            return returnValue;
+            return (v1.chasis == v2.chasis);
         }
         /// <summary>
         /// Dos vehiculos son distintos si su chasis es distinto
@@ -86,7 +74,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return !(v1.chasis == v2.chasis);
+            return (v1.chasis == v2.chasis);
         }
     }
 }

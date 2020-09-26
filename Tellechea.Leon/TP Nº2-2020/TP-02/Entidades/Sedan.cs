@@ -10,7 +10,7 @@ namespace Entidades
 {
     public class Sedan : Vehiculo
     {
-        public enum ETipo { CuatroPuertas, CincoPuertas }
+        public enum ETipo { Monovolumen, Sedan }
         ETipo tipo;
 
         /// <summary>
@@ -20,38 +20,28 @@ namespace Entidades
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
+            :base(marca, chasis, color)
         {
-            this.tipo = ETipo.CuatroPuertas;
-            this.marca = marca;
-            this.chasis = chasis;
-            this.color = color;
+            this.tipo = ETipo.Monovolumen;
         }
 
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
+            :this(marca, chasis, color)
         {
             this.tipo = tipo;
-            this.marca = marca;
-            this.chasis = chasis;
-            this.color = color;
         }
 
         /// <summary>
         /// Los automoviles son medianos
         /// </summary>
-        protected short Tamanio
-        {
-            get
-            {
-                return 1;
-            }
-        }
+        public override ETamanio Tamanio { get => ETamanio.Mediano; }
 
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
-            sb.AppendLine(Convert.ToString(this));
+            sb.AppendLine(base.Mostrar());
             sb.AppendLine($"TAMAÑO : {this.Tamanio}");
             sb.AppendLine($"TIPO : {this.tipo}");
             sb.AppendLine("");

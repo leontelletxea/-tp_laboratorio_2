@@ -48,9 +48,9 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"CHASIS: \r {p.chasis}");
-            sb.AppendLine($"MARCA : \r {p.marca.ToString()}");
-            sb.AppendLine($"COLOR : \r {p.color.ToString()}");
+            sb.AppendLine($"CHASIS: {p.chasis}");
+            sb.AppendLine($"MARCA : {p.marca.ToString()}");
+            sb.AppendLine($"COLOR : {p.color.ToString()}");
             sb.AppendLine("---------------------");
 
             return sb.ToString();

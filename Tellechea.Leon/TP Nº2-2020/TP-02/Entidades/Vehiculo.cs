@@ -76,5 +76,21 @@ namespace Entidades
         {
             return (v1.chasis == v2.chasis);
         }
+
+        public override bool Equals(object obj)
+        {
+            bool ret = false;
+            if (obj is Vehiculo)
+            {
+                ret = this == (Vehiculo)obj;
+            }
+
+            return ret;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

@@ -87,12 +87,12 @@ namespace Clases_Instanciables
             return sb.ToString();
         }
 
-        /**public bool Guardar(Jornada jornada)
+        /**public static bool Guardar(Jornada jornada)
         {
 
         }
 
-        public string Leer()
+        public static string Leer()
         {
 
         }*/

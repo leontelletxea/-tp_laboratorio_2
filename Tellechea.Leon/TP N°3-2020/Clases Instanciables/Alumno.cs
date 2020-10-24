@@ -25,14 +25,14 @@ namespace Clases_Instanciables
             this.estadoCuenta = EEstadoCuenta.AlDia;
         }
 
-        public Alumno(int id, string nombre, string apellido, string dni, Enacionalidad nacionalidad, Universidad.EClases claseQueToma)
+        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, Universidad.EClases claseQueToma)
             : base(id, nombre, apellido, dni, nacionalidad)
         {
             this.claseQueToma = claseQueToma;
             this.estadoCuenta = EEstadoCuenta.AlDia;
         }
 
-        public Alumno(int id, string nombre, string apellido, string dni, Enacionalidad nacionalidad, Universidad.EClases claseQueToma, EEstadoCuenta estadoCuenta)
+        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, Universidad.EClases claseQueToma, EEstadoCuenta estadoCuenta)
             : this(id, nombre, apellido, dni, nacionalidad, claseQueToma)
         {
             this.estadoCuenta = estadoCuenta;
@@ -60,7 +60,7 @@ namespace Clases_Instanciables
 
         public override string ToString()
         {
-            return ParticiparEnClase();
+            return MostrarDatos();
         }
 
         public static bool operator ==(Alumno a, Universidad.EClases clase)

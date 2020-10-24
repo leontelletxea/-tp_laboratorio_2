@@ -15,7 +15,7 @@ namespace Clases_Abstractas
             this.legajo = 0;
         }
 
-        public Universitario(int legajo, string nombre, string apellido, string dni, Enacionalidad nacionalidad)
+        public Universitario(int legajo, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
             : base(nombre, apellido, dni, nacionalidad)
         {
             this.legajo = legajo;

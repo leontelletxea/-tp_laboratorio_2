@@ -9,7 +9,7 @@ namespace Clases_Abstractas
 {
     public abstract class Persona
     {
-        public enum Enacionalidad
+        public enum ENacionalidad
         {
             Argentino,
             Extrangero
@@ -17,7 +17,7 @@ namespace Clases_Abstractas
 
         private string apellido;
         private int dni;
-        private Enacionalidad nacionalidad;
+        private ENacionalidad nacionalidad;
         private string nombre;
 
         public string Apellido
@@ -37,7 +37,7 @@ namespace Clases_Abstractas
             }
         }
 
-        public Enacionalidad Nacionalidad
+        public ENacionalidad Nacionalidad
         {
             get { return nacionalidad; }
             set { nacionalidad = value; }
@@ -58,32 +58,32 @@ namespace Clases_Abstractas
         {
             this.apellido = null;
             this.dni = 0;
-            this.nacionalidad = Enacionalidad.Argentino;
+            this.nacionalidad = ENacionalidad.Argentino;
             this.nombre = null;
         }
 
-        public Persona(string nombre, string apellido, Enacionalidad nacionalidad) : this()
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad) : this()
         {
             this.apellido = apellido;
             this.nacionalidad = nacionalidad;
             this.nombre = nombre;
         }
 
-        public Persona(string nombre, string apellido, int dni, Enacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
+        public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
             this.dni = dni;
         }
 
-        public Persona(string nombre, string apellido, string dni, Enacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad)
             : this(nombre, apellido, Convert.ToInt32(dni), nacionalidad)
         {
         }
 
-        private int ValidarDni(Enacionalidad nacionalidad, int dato)
+        private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
             int ret = -1;
 
-            if (nacionalidad == Enacionalidad.Argentino)
+            if (nacionalidad == ENacionalidad.Argentino)
             {
                 if (dato >= 1 && dato <= 89999999)
                 {
@@ -94,7 +94,7 @@ namespace Clases_Abstractas
                     throw new NacionalidadInvalidaException();
                 }
             }
-            else if (nacionalidad == Enacionalidad.Extrangero)
+            else if (nacionalidad == ENacionalidad.Extrangero)
             {
                 if (dato >= 90000000 && dato <= 99999999)
                 {
@@ -109,7 +109,7 @@ namespace Clases_Abstractas
             return dato;
         }
 
-        private int ValidarDni(Enacionalidad nacionalidad, string dato)
+        private int ValidarDni(ENacionalidad nacionalidad, string dato)
         {
             int datoEntero;
             int ret = -1;

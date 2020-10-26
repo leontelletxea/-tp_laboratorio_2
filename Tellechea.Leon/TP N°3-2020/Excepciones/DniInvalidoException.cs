@@ -9,23 +9,23 @@ namespace Excepciones
     public class DniInvalidoException : Exception
     {
         public DniInvalidoException()
+            : base("Dni invalido...")
         {
-            Console.WriteLine("DNI invalido...");
         }
 
         public DniInvalidoException(Exception e)
+            : base("Dni invalido...", e)
         {
-            Console.WriteLine(e.ToString());
         }
 
         public DniInvalidoException(string message)
+            : base(message)
         {
-            Console.WriteLine(message);
         }
 
         public DniInvalidoException(string message, Exception e)
+            : base(message, e)
         {
-            Console.WriteLine("{0} Excepcion: {1}", message, e.ToString());
         }
     }
 }

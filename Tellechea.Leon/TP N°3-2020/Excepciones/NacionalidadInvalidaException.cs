@@ -9,13 +9,13 @@ namespace Excepciones
     public class NacionalidadInvalidaException : Exception
     {
         public NacionalidadInvalidaException()
+            : base("Nacionalidad invalida...")
         {
-            Console.WriteLine("Nacionalidad invalida...");
         }
 
         public NacionalidadInvalidaException(string message)
+            : base(message)
         {
-            Console.WriteLine(message);
         }
     }
 }

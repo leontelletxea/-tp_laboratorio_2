@@ -9,8 +9,8 @@ namespace Excepciones
     public class ArchivosException : Exception
     {
         public ArchivosException(Exception innerException)
+            : base("Error en archivo...", innerException)
         {
-            Console.WriteLine(innerException.ToString());
         }
     }
 }

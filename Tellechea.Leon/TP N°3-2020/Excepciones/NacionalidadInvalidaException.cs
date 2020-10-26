@@ -8,5 +8,14 @@ namespace Excepciones
 {
     public class NacionalidadInvalidaException : Exception
     {
+        public NacionalidadInvalidaException()
+        {
+            Console.WriteLine("Nacionalidad invalida...");
+        }
+
+        public NacionalidadInvalidaException(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }

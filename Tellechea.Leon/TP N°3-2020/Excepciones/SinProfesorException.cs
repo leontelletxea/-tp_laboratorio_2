@@ -8,5 +8,9 @@ namespace Excepciones
 {
     public class SinProfesorException : Exception
     {
+        public SinProfesorException()
+        {
+            Console.WriteLine("No hay profesor...");
+        }
     }
 }

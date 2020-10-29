@@ -24,9 +24,12 @@ namespace EntidadesAbstractas
         {
             bool retValue = false;
 
-            if(pg1.legajo == pg2.legajo && pg1.DNI == pg2.DNI && pg1.Equals(pg2))
+            if(!(pg1 is null) && !(pg2 is null))
             {
-                retValue = true;
+                if(pg1.legajo == pg2.legajo && pg1.DNI == pg2.DNI && pg1.Equals(pg2))
+                {
+                    retValue = true;
+                }
             }
 
             return retValue;
@@ -52,7 +55,7 @@ namespace EntidadesAbstractas
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(base.ToString());
+            sb.Append(base.ToString());
             sb.AppendLine($"Legajo: {this.legajo}");
 
             return sb.ToString();

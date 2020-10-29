@@ -47,13 +47,9 @@ namespace Clases_Instanciables
         {
             bool retvalue = false;
 
-            foreach(Alumno item in j.alumnos)
+            if(a == j.clase)
             {
-                if(item == a)
-                {
-                    retvalue = true;
-                    break;
-                }
+                retvalue = true;
             }
 
             return retvalue;
@@ -81,9 +77,12 @@ namespace Clases_Instanciables
             sb.AppendLine(this.clase.ToString());
             sb.AppendLine(this.instructor.ToString());
 
-            foreach (Alumno a in this.alumnos)
+            if(this.alumnos != null)
             {
-                sb.AppendLine(a.ToString());
+                foreach (Alumno a in this.alumnos)
+                {
+                    sb.AppendLine(a.ToString());
+                }
             }
 
             return sb.ToString();

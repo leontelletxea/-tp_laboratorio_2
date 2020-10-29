@@ -95,12 +95,12 @@ namespace Clases_Instanciables
                 if (p == clase)
                 {
                     Jornada j = new Jornada(clase, p);
-                    g.jornada.Add(j);
+                    j.Instructor = p;
                     foreach (Alumno a in g.alumnos)
                     {
                         if (a == clase)
                         {
-                            g.alumnos.Add(a);
+                            j += a; 
                         }
                     }
                     break;
@@ -180,19 +180,22 @@ namespace Clases_Instanciables
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("Alumnos: ");
+            if(uni.alumnos != null)
+                sb.AppendLine("Alumnos: ");
             foreach (Alumno a in uni.alumnos)
             {
                 sb.AppendLine(a.ToString());
             }
 
-            sb.AppendLine("Jornadas: ");
+            if (uni.jornada != null)
+                sb.AppendLine("Jornadas: ");
             foreach (Jornada j in uni.jornada)
             {
                 sb.AppendLine(j.ToString());
             }
 
-            sb.AppendLine("Profesores: ");
+            if (uni.profesores != null)
+                sb.AppendLine("Profesores: ");
             foreach (Profesor p in uni.profesores)
             {
                 sb.AppendLine(p.ToString());
@@ -203,7 +206,7 @@ namespace Clases_Instanciables
 
         public override string ToString()
         {
-            return MostrarDatos(new Universidad()); // Revisar!
+            return MostrarDatos(this);
         }
 
         public Universidad()

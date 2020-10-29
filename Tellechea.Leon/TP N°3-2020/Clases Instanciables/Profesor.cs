@@ -17,15 +17,18 @@ namespace Clases_Instanciables
             random = new Random();
         }
 
-        public Profesor()
+        private Profesor()
         {
-            clasesDelDia = new Queue<Universidad.EClases>();
+            this.clasesDelDia = new Queue<Universidad.EClases>();
             _randomClases();
         }
 
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
             : base(id, nombre, apellido, dni, nacionalidad)
         {
+            Profesor aux = new Profesor();
+            this.clasesDelDia = aux.clasesDelDia;
+            aux = null;
         }
 
         private void _randomClases()
@@ -84,9 +87,12 @@ namespace Clases_Instanciables
         {
             bool retValue = false;
             
-            if(i.clasesDelDia.Contains(clase))
+            if(i != null)
             {
-                retValue = true;
+                if(i.clasesDelDia.Contains(clase)==true)
+                {
+                    retValue = true;
+                }
             }
 
             return retValue;

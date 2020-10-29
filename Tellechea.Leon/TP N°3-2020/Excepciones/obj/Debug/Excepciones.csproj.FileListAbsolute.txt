@@ -1,0 +1,6 @@
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP N°3-2020\Excepciones\bin\Debug\Excepciones.dll
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP N°3-2020\Excepciones\bin\Debug\Excepciones.pdb
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP N°3-2020\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP N°3-2020\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP N°3-2020\Excepciones\obj\Debug\Excepciones.dll
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\TP N°3-2020\Excepciones\obj\Debug\Excepciones.pdb

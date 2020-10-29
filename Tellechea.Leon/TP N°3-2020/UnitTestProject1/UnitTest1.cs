@@ -57,7 +57,7 @@ namespace UnitTestProject1
             catch (AlumnoRepetidoException e)
             {
                 Assert.IsInstanceOfType(e, typeof(AlumnoRepetidoException));
-            }*/
-        }
+            }
+        }*/
     }
 }

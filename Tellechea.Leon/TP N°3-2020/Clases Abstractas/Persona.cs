@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Excepciones;
 
-namespace Clases_Abstractas
+namespace EntidadesAbstractas
 {
     public abstract class Persona
     {
         public enum ENacionalidad
         {
             Argentino,
-            Extrangero
+            Extranjero
         }
 
         private string apellido;
@@ -90,7 +90,7 @@ namespace Clases_Abstractas
                     throw new NacionalidadInvalidaException();
                 }
             }
-            else if (nacionalidad == ENacionalidad.Extrangero)
+            else if (nacionalidad == ENacionalidad.Extranjero)
             {
                 if (dato >= 90000000 && dato <= 99999999)
                 {

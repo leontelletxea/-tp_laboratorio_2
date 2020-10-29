@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Excepciones;
 
 namespace Archivos
 {
-    public class Texto
+    public class Texto : IArchivo<string>
     {
         public bool Guardar(string archivo, string datos)
         {
@@ -23,7 +24,7 @@ namespace Archivos
             }
             catch(Exception e)
             {
-                Console.WriteLine("Falló la escritura. Razones: " + e.Message);
+                throw new ArchivosException(e);
             }
 
             return retValue;
@@ -43,8 +44,7 @@ namespace Archivos
             }
             catch (Exception e)
             {
-                datos = null;
-                Console.WriteLine("Falló la escritura. Razones: " + e.Message);
+                throw new ArchivosException(e);
             }
 
             return retValue;

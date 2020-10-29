@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Archivos;
+using Excepciones;
 
 namespace Clases_Instanciables
 {
@@ -87,14 +89,39 @@ namespace Clases_Instanciables
             return sb.ToString();
         }
 
-        /**public static bool Guardar(Jornada jornada)
+        public static bool Guardar(Jornada jornada)
         {
+            bool retValue = false;
 
+            try
+            {
+                Texto t = new Texto();
+                t.Guardar("Jornada.txt", jornada.ToString());
+                retValue = true;
+            }
+            catch(ArchivosException e)
+            {
+                throw e;
+            }
+
+            return retValue;
         }
 
         public static string Leer()
         {
+            string cadena;
 
-        }*/
+            try
+            {
+                Texto t = new Texto();
+                t.Leer("Jornada.txt", out cadena);
+            }
+            catch (ArchivosException e)
+            {
+                throw e;
+            }
+
+            return cadena;
+        }
     }
 }

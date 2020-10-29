@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Excepciones;
+using Archivos;
 
 namespace Clases_Instanciables
 {
@@ -212,14 +213,39 @@ namespace Clases_Instanciables
             profesores = new List<Profesor>();
         }
 
-        /**public static bool Guardar(Universidad uni)
+        public static bool Guardar(Universidad uni)
         {
+            bool retValue = false;
 
+            try
+            {
+                Xml<Universidad> x = new Xml<Universidad>();
+                x.Guardar("Universidad.txt", uni);
+                retValue = true;
+            }
+            catch (ArchivosException e)
+            {
+                throw e;
+            }
+
+            return retValue;
         }
 
-        public static string Universidad Leer()
+        public static Universidad Leer()
         {
+            Universidad uni;
 
-        }*/
+            try
+            {
+                Xml<Universidad> x = new Xml<Universidad>();
+                x.Leer("Jornada.txt", out uni);
+            }
+            catch (ArchivosException e)
+            {
+                throw e;
+            }
+
+            return uni;
+        }
     }
 }

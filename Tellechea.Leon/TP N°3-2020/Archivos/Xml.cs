@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Xml;
+using Excepciones;
 
 namespace Archivos
 {
@@ -26,7 +27,7 @@ namespace Archivos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Falló la serialización. Razones: " + e.Message);
+                throw new ArchivosException(e);
             }
 
             return retValue;
@@ -50,7 +51,7 @@ namespace Archivos
             }
             catch(Exception e)
             {
-                Console.WriteLine("Falló la deserialización. Razones: " + e.Message);
+                throw new ArchivosException(e);
             }
 
             return retValue;

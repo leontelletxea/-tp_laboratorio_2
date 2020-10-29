@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases Abstractas", "Clases Abstractas\Clases Abstractas.csproj", "{AA208BF7-CDCC-4CEB-AED3-A7080331D5FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntidadesAbstractas", "Clases Abstractas\EntidadesAbstractas.csproj", "{AA208BF7-CDCC-4CEB-AED3-A7080331D5FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases Instanciables", "Clases Instanciables\Clases Instanciables.csproj", "{3F05D3E4-BBCF-4717-AC99-2DA032585873}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excepciones", "Excepciones\Excepciones.csproj", "{EC6CA333-1511-486F-AEFD-412B0583251C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archivos", "Archivos\Archivos.csproj", "{69A9943B-563A-430F-8D9D-DD113B71BF8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTest", "ConsoleAppTest\ConsoleAppTest.csproj", "{B95A5928-1E6E-44AA-BF78-E11E7A5782D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{69A9943B-563A-430F-8D9D-DD113B71BF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69A9943B-563A-430F-8D9D-DD113B71BF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69A9943B-563A-430F-8D9D-DD113B71BF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B95A5928-1E6E-44AA-BF78-E11E7A5782D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95A5928-1E6E-44AA-BF78-E11E7A5782D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95A5928-1E6E-44AA-BF78-E11E7A5782D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B95A5928-1E6E-44AA-BF78-E11E7A5782D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

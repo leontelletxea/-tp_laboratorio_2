@@ -8,6 +8,16 @@ namespace Excepciones
 {
     public class ArchivosException : Exception
     {
+        public ArchivosException(string message)
+            : base(message)
+        {
+        }
+
+        public ArchivosException()
+            : base("Error en archivos...")
+        {
+        }
+
         public ArchivosException(Exception innerException)
             : base("Error en archivo...", innerException)
         {

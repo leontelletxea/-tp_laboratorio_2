@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 namespace Excepciones
 {
     public class NacionalidadInvalidaException : Exception
-    {
+    {       
+        public NacionalidadInvalidaException(string message)
+            : base(message)
+        {
+        }
+
         public NacionalidadInvalidaException()
             : base("Nacionalidad invalida...")
         {
         }
 
-        public NacionalidadInvalidaException(string message)
-            : base(message)
-        {
-        }
+
     }
 }

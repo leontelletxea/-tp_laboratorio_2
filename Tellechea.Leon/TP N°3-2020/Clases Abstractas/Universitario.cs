@@ -12,7 +12,6 @@ namespace Clases_Abstractas
 
         public Universitario()
         {
-            this.legajo = 0;
         }
 
         public Universitario(int legajo, string nombre, string apellido, string dni, ENacionalidad nacionalidad)

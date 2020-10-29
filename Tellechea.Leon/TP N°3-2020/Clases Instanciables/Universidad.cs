@@ -217,7 +217,7 @@ namespace Clases_Instanciables
 
         }
 
-        public static Universidad Leer()
+        public static string Universidad Leer()
         {
 
         }*/

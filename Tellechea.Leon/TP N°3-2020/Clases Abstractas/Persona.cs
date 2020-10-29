@@ -56,10 +56,6 @@ namespace Clases_Abstractas
 
         public Persona()
         {
-            this.apellido = null;
-            this.dni = 0;
-            this.nacionalidad = ENacionalidad.Argentino;
-            this.nombre = null;
         }
 
         public Persona(string nombre, string apellido, ENacionalidad nacionalidad) : this()

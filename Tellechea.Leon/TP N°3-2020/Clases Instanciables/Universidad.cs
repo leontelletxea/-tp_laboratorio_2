@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Excepciones;
 using Archivos;
+using EntidadesAbstractas;
 
 namespace Clases_Instanciables
 {
@@ -119,7 +120,7 @@ namespace Clases_Instanciables
             else
             {
                 throw new AlumnoRepetidoException();
-            }
+            }     
 
             return g;
         }
@@ -137,17 +138,19 @@ namespace Clases_Instanciables
         public static Profesor operator ==(Universidad u, EClases clase)
         {
             Profesor p = null;
+            int flag = 0;
 
             foreach (Profesor i in u.profesores)
             {
                 if (i == clase)
                 {
                     p = i;
+                    flag = 1;
                     break;
                 }
             }
 
-            if (p != null)
+            if (p == null)
             {
                 throw new SinProfesorException();
             }

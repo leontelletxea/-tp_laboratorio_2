@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntidadesAbstractas;
+using Excepciones;
 
 namespace Clases_Instanciables
 {
@@ -87,12 +88,9 @@ namespace Clases_Instanciables
         {
             bool retValue = false;
             
-            if(i != null)
+            if(i.clasesDelDia.Contains(clase)==true)
             {
-                if(i.clasesDelDia.Contains(clase)==true)
-                {
-                    retValue = true;
-                }
+               retValue = true;
             }
 
             return retValue;

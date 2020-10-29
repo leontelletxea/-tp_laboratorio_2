@@ -51,7 +51,11 @@ namespace EntidadesAbstractas
 
         public string StringToDNI
         {
-            set { dni = Convert.ToInt32(value); }
+            set
+            {
+                if (ValidarDni(nacionalidad, value) != -1)
+                    dni = Convert.ToInt32(value);
+            }
         }
 
         public Persona()
@@ -67,7 +71,7 @@ namespace EntidadesAbstractas
 
         public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            this.dni = dni;
+            DNI = dni;
         }
 
         public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad)

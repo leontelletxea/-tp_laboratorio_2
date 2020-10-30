@@ -20,7 +20,10 @@ namespace Clases_Instanciables
         private EEstadoCuenta estadoCuenta;
 
         public Alumno()
+            : base()
         {
+            this.claseQueToma = Universidad.EClases.Laboratorio;
+            estadoCuenta = EEstadoCuenta.AlDia;
         }
 
         public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, Universidad.EClases claseQueToma)
@@ -40,15 +43,7 @@ namespace Clases_Instanciables
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.MostrarDatos());
-            if(this.estadoCuenta == EEstadoCuenta.AlDia)
-            {
-                sb.AppendLine("\nESTADO DE CUENTA: Cuota al día");
-            }
-            else
-            {
-                sb.AppendLine($"\nESTADO DE CUENTA: {this.estadoCuenta}");
-            }
-           
+            sb.AppendLine($"\nESTADO DE CUENTA: {this.estadoCuenta}");
             sb.AppendLine(ParticiparEnClase());
 
             return sb.ToString();
@@ -72,9 +67,12 @@ namespace Clases_Instanciables
         {
             bool retValue = false;
 
-            if (a.claseQueToma == clase && a.estadoCuenta != EEstadoCuenta.Deudor)
+            if ((object)a != null && (object)clase != null)
             {
-                retValue = true;
+                if (a.claseQueToma == clase && a.estadoCuenta != EEstadoCuenta.Deudor)
+                {
+                    retValue = true;
+                }
             }
 
             return retValue;
@@ -84,9 +82,12 @@ namespace Clases_Instanciables
         {
             bool retValue = false;
 
-            if (a.claseQueToma != clase)
+            if ((object)a != null && (object)clase != null)
             {
-                retValue = true;
+                if (a.claseQueToma != clase)
+                {
+                    retValue = true;
+                }
             }
 
             return retValue;

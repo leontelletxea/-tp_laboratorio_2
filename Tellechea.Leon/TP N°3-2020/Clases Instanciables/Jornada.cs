@@ -35,7 +35,7 @@ namespace Clases_Instanciables
 
         private Jornada()
         {
-            alumnos = new List<Alumno>();
+            this.alumnos = new List<Alumno>();
         }
 
         public Jornada(Universidad.EClases clase, Profesor instructor) : this()
@@ -59,6 +59,7 @@ namespace Clases_Instanciables
                     }
                 }
             }
+
             return retValue;
         }
 
@@ -69,9 +70,12 @@ namespace Clases_Instanciables
 
         public static Jornada operator +(Jornada j, Alumno a)
         {
-            if(j != a)
+            if ((object)j != null && (object)a != null)
             {
-                j.alumnos.Add(a);
+                if (j != a)
+                {
+                    j.alumnos.Add(a);
+                }
             }
 
             return j;
@@ -84,9 +88,9 @@ namespace Clases_Instanciables
             sb.Append($"CLASE DE {this.clase} ");
             sb.AppendLine($"POR {this.instructor}");
 
-            sb.AppendLine("ALUMNOS:");
             if (this.alumnos != null)
             {
+                sb.AppendLine("ALUMNOS:");
                 foreach (Alumno a in this.alumnos)
                 {
                     sb.Append(a.ToString());
@@ -116,19 +120,19 @@ namespace Clases_Instanciables
 
         public static string Leer()
         {
-            string cadena;
+            string jornada;
 
             try
             {
                 Texto t = new Texto();
-                t.Leer("Jornada.txt", out cadena);
+                t.Leer("Jornada.txt", out jornada);
             }
             catch (ArchivosException e)
             {
                 throw e;
             }
 
-            return cadena;
+            return jornada.ToString();
         }
     }
 }

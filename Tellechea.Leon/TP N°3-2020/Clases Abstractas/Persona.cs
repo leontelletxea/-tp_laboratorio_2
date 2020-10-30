@@ -53,13 +53,16 @@ namespace EntidadesAbstractas
         {
             set
             {
-                if (ValidarDni(nacionalidad, value) != -1)
-                    dni = Convert.ToInt32(value);
+                dni = ValidarDni(nacionalidad, value);
             }
         }
 
         public Persona()
         {
+            this.apellido = "";
+            this.dni = 0;
+            this.nacionalidad = ENacionalidad.Argentino;
+            this.nombre = "";
         }
 
         public Persona(string nombre, string apellido, ENacionalidad nacionalidad) : this()
@@ -71,23 +74,24 @@ namespace EntidadesAbstractas
 
         public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            DNI = dni;
+            this.DNI = dni;
         }
 
         public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad)
             : this(nombre, apellido, Convert.ToInt32(dni), nacionalidad)
         {
+            this.StringToDNI = dni;
         }
 
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
-            int ret = -1;
+            int retValue = -1;
 
             if (nacionalidad == ENacionalidad.Argentino)
             {
                 if (dato >= 1 && dato <= 89999999)
                 {
-                    ret = dato;
+                    retValue = dato;
                 }
                 else
                 {
@@ -98,7 +102,7 @@ namespace EntidadesAbstractas
             {
                 if (dato >= 90000000 && dato <= 99999999)
                 {
-                    ret = dato;
+                    retValue = dato;
                 }
                 else
                 {
@@ -111,36 +115,36 @@ namespace EntidadesAbstractas
 
         private int ValidarDni(ENacionalidad nacionalidad, string dato)
         {
-            int datoEntero;
-            int ret = -1;
+            int dni;
+            int retValue = -1;
 
-            if(int.TryParse(dato, out datoEntero) == true && dato.Length == 0 || dato.Length > 8)
+            if(int.TryParse(dato, out dni) == true && dato.Length < 9)
             {
-                ret = ValidarDni(nacionalidad, Convert.ToInt32(datoEntero));
+                retValue = ValidarDni(nacionalidad, dni);
             }
             else
             {
                 throw new DniInvalidoException();
             }
 
-            return ret;
+            return retValue;
         }
 
         private string ValidarNombreApellido(string dato)
         {
             string ret = "";
-            bool retValue = false;
+            bool flag = false;
 
             foreach(char c in dato)
             {
                 if(!Char.IsLetter(c))
                 {
-                    retValue = true;
+                    flag = true;
                     break;
                 }
             }
 
-            if (retValue == false)
+            if(flag == false)
                 ret = dato;
 
             return ret;

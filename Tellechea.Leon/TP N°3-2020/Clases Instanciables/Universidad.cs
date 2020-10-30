@@ -90,6 +90,7 @@ namespace Clases_Instanciables
                     }
                 }
             }
+
             return retValue;
         }
 
@@ -102,12 +103,15 @@ namespace Clases_Instanciables
         {
             bool retValue = false;
 
-            foreach (Profesor item in g.profesores)
+            if ((object)g != null)
             {
-                if (item == i)
+                foreach (Profesor item in g.profesores)
                 {
-                    retValue = true;
-                    break;
+                    if (item == i)
+                    {
+                        retValue = true;
+                        break;
+                    }
                 }
             }
 
@@ -123,27 +127,30 @@ namespace Clases_Instanciables
         {
             bool flag = false;
 
-            foreach (Profesor p in g.profesores)
+            if((object)g != null)
             {
-                if (p == clase)
+                foreach (Profesor p in g.profesores)
                 {
-                    Jornada j = new Jornada(clase, p);
-                    flag = true;
-                    foreach (Alumno a in g.alumnos)
+                    if (p == clase)
                     {
-                        if (a == clase)
+                        Jornada j = new Jornada(clase, p);
+                        foreach (Alumno a in g.alumnos)
                         {
-                            j.Alumnos.Add(a);
+                            if (a == clase)
+                            {
+                                j.Alumnos.Add(a);
+                            }
                         }
+                        g.Jornada.Add(j);
+                        flag = true;
+                        break;
                     }
-                    g.Jornada.Add(j);
-                    break;
                 }
-            }
 
-            if(flag == false)
-            {
-                throw new SinProfesorException();
+                if(flag == false)
+                {
+                    throw new SinProfesorException();
+                }
             }
 
             return g;
@@ -151,23 +158,29 @@ namespace Clases_Instanciables
 
         public static Universidad operator +(Universidad g, Alumno a)
         {
-            if (g != a)
+            if((object)g != null)
             {
-                g.alumnos.Add(a);
+                if (g != a)
+                {
+                    g.alumnos.Add(a);
+                }
+                else
+                {
+                    throw new AlumnoRepetidoException();
+                }     
             }
-            else
-            {
-                throw new AlumnoRepetidoException();
-            }     
 
             return g;
         }
 
         public static Universidad operator +(Universidad g, Profesor i)
         {
-            if (g != i)
+            if((object)g != null)
             {
-                g.profesores.Add(i);
+                if (g != i)
+                {
+                    g.profesores.Add(i);
+                }
             }
 
             return g;
@@ -201,18 +214,16 @@ namespace Clases_Instanciables
         {
             Profesor p = null;
 
-            foreach (Profesor i in u.profesores)
+            if ((object)u != null)
             {
-                if (i != clase)
+                foreach (Profesor i in u.profesores)
                 {
-                    p = i;
-                    break;
+                    if (i != clase)
+                    {
+                        p = i;
+                        break;
+                    }
                 }
-            }
-
-            if (p == null)
-            {
-                throw new SinProfesorException();
             }
 
             return p;
@@ -223,13 +234,14 @@ namespace Clases_Instanciables
             StringBuilder sb = new StringBuilder();
 
             if (uni.jornada != null)
-                sb.AppendLine("JORNADA: ");
-            foreach (Jornada j in uni.jornada)
             {
-                sb.Append(j.ToString());
-                sb.AppendLine("<------------------------------------------------------------------>\n");
+                sb.AppendLine("JORNADA: ");
+                foreach (Jornada j in uni.jornada)
+                {
+                    sb.Append(j.ToString());
+                    sb.AppendLine("<------------------------------------------------------------------>\n");
+                }
             }
-            
 
             return sb.ToString();
         }
@@ -246,7 +258,7 @@ namespace Clases_Instanciables
             try
             {
                 Xml<Universidad> x = new Xml<Universidad>();
-                x.Guardar("Universidad.txt", uni);
+                x.Guardar("Universidad.xml", uni);
                 retValue = true;
             }
             catch (ArchivosException e)
@@ -264,7 +276,7 @@ namespace Clases_Instanciables
             try
             {
                 Xml<Universidad> x = new Xml<Universidad>();
-                x.Leer("Jornada.txt", out uni);
+                x.Leer("Universidad.xml", out uni);
             }
             catch (ArchivosException e)
             {

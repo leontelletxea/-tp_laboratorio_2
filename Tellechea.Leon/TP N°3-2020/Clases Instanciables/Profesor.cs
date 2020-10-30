@@ -19,6 +19,7 @@ namespace Clases_Instanciables
         }
 
         private Profesor()
+            : base()
         {
             this.clasesDelDia = new Queue<Universidad.EClases>();
             _randomClases();
@@ -27,7 +28,7 @@ namespace Clases_Instanciables
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
             : base(id, nombre, apellido, dni, nacionalidad)
         {
-            clasesDelDia = new Queue<Universidad.EClases>();
+            this.clasesDelDia = new Queue<Universidad.EClases>();
             _randomClases();
         }
 
@@ -69,7 +70,6 @@ namespace Clases_Instanciables
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("CLASES DEL DIA: ");
-
             foreach (Universidad.EClases c in this.clasesDelDia)
             {
                 sb.AppendLine(c.ToString());

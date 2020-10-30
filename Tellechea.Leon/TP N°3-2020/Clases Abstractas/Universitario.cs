@@ -11,7 +11,9 @@ namespace EntidadesAbstractas
         private int legajo;
 
         public Universitario()
+            : base()
         {
+            this.legajo = 0;
         }
 
         public Universitario(int legajo, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
@@ -31,6 +33,7 @@ namespace EntidadesAbstractas
                     retValue = true;
                 }
             }
+
             return retValue;
         }
 
@@ -41,13 +44,14 @@ namespace EntidadesAbstractas
 
         public override bool Equals(object obj)
         {
-            bool ret = false;
+            bool retVaue = false;
+
             if (obj is Universitario)
             {
-                ret = this == (Universitario)obj;
+                retVaue = this == (Universitario)obj;
             }
 
-            return ret;
+            return retVaue;
         }
 
         protected virtual string MostrarDatos()

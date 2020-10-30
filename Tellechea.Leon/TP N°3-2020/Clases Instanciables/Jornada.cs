@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Archivos;
 using Excepciones;
+using EntidadesAbstractas;
 
 namespace Clases_Instanciables
 {
@@ -45,14 +46,20 @@ namespace Clases_Instanciables
 
         public static bool operator ==(Jornada j, Alumno a)
         {
-            bool retvalue = false;
+            bool retValue = false;
 
-            if(a == j.clase)
+            if ((object)j != null)
             {
-                retvalue = true;
+                foreach (Alumno item in j.alumnos)
+                {
+                    if ((Universitario)item == (Universitario)a)
+                    {
+                        retValue = true;
+                        break;
+                    }
+                }
             }
-
-            return retvalue;
+            return retValue;
         }
 
         public static bool operator !=(Jornada j, Alumno a)

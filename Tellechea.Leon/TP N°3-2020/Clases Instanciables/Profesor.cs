@@ -72,7 +72,7 @@ namespace Clases_Instanciables
 
             foreach (Universidad.EClases c in this.clasesDelDia)
             {
-                sb.Append(c.ToString());
+                sb.AppendLine(c.ToString());
             }
 
             return sb.ToString();

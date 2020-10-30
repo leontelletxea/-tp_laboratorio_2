@@ -24,14 +24,13 @@ namespace EntidadesAbstractas
         {
             bool retValue = false;
 
-            if(!(pg1 is null) && !(pg2 is null))
+            if ((object)pg1 != null && (object)pg2 != null)
             {
-                if(pg1.legajo == pg2.legajo && pg1.DNI == pg2.DNI && pg1.Equals(pg2))
+                if (pg1.GetType() == pg2.GetType() && (pg1.legajo == pg2.legajo || pg1.DNI == pg2.DNI))
                 {
                     retValue = true;
                 }
             }
-
             return retValue;
         }
 

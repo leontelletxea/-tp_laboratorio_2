@@ -226,8 +226,8 @@ namespace Clases_Instanciables
                 sb.AppendLine("JORNADA: ");
             foreach (Jornada j in uni.jornada)
             {
-                sb.AppendLine(j.ToString());
-                sb.AppendLine("<----------------------------------->");
+                sb.Append(j.ToString());
+                sb.AppendLine("<------------------------------------------------------------------>\n");
             }
             
 

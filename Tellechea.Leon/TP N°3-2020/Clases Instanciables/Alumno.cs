@@ -40,7 +40,15 @@ namespace Clases_Instanciables
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.MostrarDatos());
-            sb.AppendLine($"\nESTADO DE CUENTA: {this.estadoCuenta}");
+            if(this.estadoCuenta == EEstadoCuenta.AlDia)
+            {
+                sb.AppendLine("\nESTADO DE CUENTA: Cuota al día");
+            }
+            else
+            {
+                sb.AppendLine($"\nESTADO DE CUENTA: {this.estadoCuenta}");
+            }
+           
             sb.AppendLine(ParticiparEnClase());
 
             return sb.ToString();

@@ -15,7 +15,7 @@ namespace Clases_Instanciables
 
         static Profesor()
         {
-            random = new Random();
+            Profesor.random = new Random();
         }
 
         private Profesor()
@@ -27,31 +27,30 @@ namespace Clases_Instanciables
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
             : base(id, nombre, apellido, dni, nacionalidad)
         {
-            Profesor aux = new Profesor();
-            this.clasesDelDia = aux.clasesDelDia;
-            aux = null;
+            clasesDelDia = new Queue<Universidad.EClases>();
+            _randomClases();
         }
 
         private void _randomClases()
         {
-            int clase;
-
-            clase = random.Next(0, 3);
-
-            switch (clase)
+            for (int i = 0; i < 2; i++)
             {
-                case 0:
-                    clasesDelDia.Enqueue(Universidad.EClases.Laboratorio);
-                    break;
-                case 1:
-                    clasesDelDia.Enqueue(Universidad.EClases.Legislacion);
-                    break;
-                case 2:
-                    clasesDelDia.Enqueue(Universidad.EClases.Programacion);
-                    break;
-                case 3:
-                    clasesDelDia.Enqueue(Universidad.EClases.SPD);
-                    break;
+
+                switch (Profesor.random.Next(0, 3))
+                {
+                    case 0:
+                        this.clasesDelDia.Enqueue(Universidad.EClases.Programacion);
+                        break;
+                    case 1:
+                        this.clasesDelDia.Enqueue(Universidad.EClases.Laboratorio);
+                        break;
+                    case 2:
+                        this.clasesDelDia.Enqueue(Universidad.EClases.Legislacion);
+                        break;
+                    case 3:
+                        this.clasesDelDia.Enqueue(Universidad.EClases.SPD);
+                        break;
+                }
             }
         }
 
@@ -73,7 +72,7 @@ namespace Clases_Instanciables
 
             foreach (Universidad.EClases c in this.clasesDelDia)
             {
-                sb.AppendLine(c.ToString());
+                sb.Append(c.ToString());
             }
 
             return sb.ToString();
@@ -88,9 +87,16 @@ namespace Clases_Instanciables
         {
             bool retValue = false;
             
-            if(i.clasesDelDia.Contains(clase)==true)
+            if((object)i != null && (object)clase != null)
             {
-               retValue = true;
+                foreach (Universidad.EClases c in i.clasesDelDia)
+                {
+                    if (c == clase)
+                    {
+                        retValue = true;
+                        break;
+                    }
+                }
             }
 
             return retValue;

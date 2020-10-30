@@ -41,7 +41,7 @@ namespace ConsoleAppTest
             {
                 Console.WriteLine(e.Message);
             }
-            Alumno a4 = new Alumno(4, "Miguel", "Hernandez", "92264456",
+            Alumno a4 = new Alumno(4, "Miguel", "Hernandez", "92264456", 
             EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Clases_Instanciables.Universidad.EClases.Legislacion,
             Alumno.EEstadoCuenta.AlDia);
             uni += a4;

@@ -150,9 +150,8 @@ namespace EntidadesAbstractas
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"POR NOMBRE COMPLETO: {this.apellido}, {this.nombre}");
-            sb.AppendLine($"NACIONALIDAD: {this.nacionalidad}\n");
-            sb.AppendLine($"DNI: {this.dni}");
+            sb.AppendLine($"NOMBRE COMPLETO: {this.apellido}, {this.nombre}");
+            sb.AppendLine($"NACIONALIDAD: {this.nacionalidad}");
 
             return sb.ToString();
         }

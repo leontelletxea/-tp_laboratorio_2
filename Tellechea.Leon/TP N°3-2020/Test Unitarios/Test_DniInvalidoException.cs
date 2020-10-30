@@ -10,7 +10,7 @@ namespace UnitTestProject1
     public class Test_DniInvalidoException
     {
         [TestMethod]
-        public void TestMethod2()
+        public void TestMethod1()
         {
             try
             {

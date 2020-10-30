@@ -52,7 +52,7 @@
     <Compile Include="Test_ListaIntanciada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test_DniInvalidoException.cs" />
-    <Compile Include="NacionalidadInvalidaException.cs" />
+    <Compile Include="Test_NacionalidadInvalidaException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

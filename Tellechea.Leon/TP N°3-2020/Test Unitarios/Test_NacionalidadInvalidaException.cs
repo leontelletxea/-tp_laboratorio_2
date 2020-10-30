@@ -7,7 +7,7 @@ using Excepciones;
 namespace UnitTestProject1
 {
     [TestClass]
-    public class NacionalidadInvalidaException
+    public class Test_NacionalidadInvalidaException
     {
         [TestMethod]
         public void TestMethod3()

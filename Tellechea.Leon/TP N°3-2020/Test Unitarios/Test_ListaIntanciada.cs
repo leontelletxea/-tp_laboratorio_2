@@ -10,7 +10,7 @@ namespace UnitTestProject1
     public class Test_ListaIntanciada
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod2()
         {
             try
             {

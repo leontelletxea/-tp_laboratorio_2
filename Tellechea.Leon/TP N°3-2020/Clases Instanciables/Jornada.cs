@@ -104,16 +104,9 @@ namespace Clases_Instanciables
         {
             bool retValue = false;
 
-            try
-            {
-                Texto t = new Texto();
-                t.Guardar("Jornada.txt", jornada.ToString());
-                retValue = true;
-            }
-            catch(ArchivosException e)
-            {
-                throw e;
-            }
+            Texto t = new Texto();
+            t.Guardar("Jornada.txt", jornada.ToString());
+            retValue = true;
 
             return retValue;
         }
@@ -122,15 +115,8 @@ namespace Clases_Instanciables
         {
             string jornada;
 
-            try
-            {
-                Texto t = new Texto();
-                t.Leer("Jornada.txt", out jornada);
-            }
-            catch (ArchivosException e)
-            {
-                throw e;
-            }
+            Texto t = new Texto();
+            t.Leer("Jornada.txt", out jornada);
 
             return jornada.ToString();
         }

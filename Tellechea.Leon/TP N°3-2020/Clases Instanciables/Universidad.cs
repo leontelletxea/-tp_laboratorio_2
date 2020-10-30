@@ -255,16 +255,9 @@ namespace Clases_Instanciables
         {
             bool retValue = false;
 
-            try
-            {
-                Xml<Universidad> x = new Xml<Universidad>();
-                x.Guardar("Universidad.xml", uni);
-                retValue = true;
-            }
-            catch (ArchivosException e)
-            {
-                throw e;
-            }
+            Xml<Universidad> x = new Xml<Universidad>();
+            x.Guardar("Universidad.xml", uni);
+            retValue = true;
 
             return retValue;
         }
@@ -273,15 +266,8 @@ namespace Clases_Instanciables
         {
             Universidad uni;
 
-            try
-            {
-                Xml<Universidad> x = new Xml<Universidad>();
-                x.Leer("Universidad.xml", out uni);
-            }
-            catch (ArchivosException e)
-            {
-                throw e;
-            }
+            Xml<Universidad> x = new Xml<Universidad>();
+            x.Leer("Universidad.xml", out uni);
 
             return uni;
         }

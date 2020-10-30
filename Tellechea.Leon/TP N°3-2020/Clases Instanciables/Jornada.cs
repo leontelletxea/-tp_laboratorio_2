@@ -86,7 +86,7 @@ namespace Clases_Instanciables
             StringBuilder sb = new StringBuilder();
 
             sb.Append($"CLASE DE {this.clase} ");
-            sb.AppendLine($"POR {this.instructor}");
+            sb.Append($"POR {this.instructor}");
 
             if (this.alumnos != null)
             {

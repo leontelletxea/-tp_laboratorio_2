@@ -53,7 +53,7 @@ namespace Clases_Instanciables
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"TOMA CLASE DE: {this.claseQueToma}");
+            sb.AppendLine($"TOMA CLASES DE: {this.claseQueToma}");
 
             return sb.ToString();
         }

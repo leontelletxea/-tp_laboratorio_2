@@ -17,13 +17,12 @@ namespace Archivos
 
             try
             {
-                using (XmlTextWriter writer = new XmlTextWriter(archivo, System.Text.Encoding.UTF8))
+                using (XmlTextWriter writer = new XmlTextWriter(archivo, Encoding.UTF8))
                 {
                     XmlSerializer ser = new XmlSerializer(typeof(T));
-
                     ser.Serialize(writer, datos);
+                    retValue = true;
                 }
-                retValue = true;
             }
             catch (Exception e)
             {
@@ -33,21 +32,18 @@ namespace Archivos
             return retValue;
         }
 
-        public bool Leer(string archivos, out T datos)
+        public bool Leer(string archivo, out T datos)
         {
             bool retValue = false;
 
             try
             {
-                using (XmlTextReader reader = new XmlTextReader("Datos.xml"))
+                using (XmlTextReader reader = new XmlTextReader(archivo))
                 {
                     XmlSerializer ser = new XmlSerializer(typeof(T));
-
                     datos = (T)ser.Deserialize(reader);
-
-                    Console.WriteLine(datos.ToString());
+                    retValue = true;
                 }
-                retValue = true;
             }
             catch(Exception e)
             {

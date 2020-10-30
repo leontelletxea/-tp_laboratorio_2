@@ -16,11 +16,11 @@ namespace Archivos
 
             try
             {
-                using (StreamWriter sw = new StreamWriter(archivo, true))
+                using (StreamWriter sw = new StreamWriter(archivo, false, Encoding.UTF8))
                 {
-                    sw.WriteLine(datos.ToString());
+                    sw.WriteLine(datos);
+                    retValue = true;
                 }
-                retValue = true;
             }
             catch(Exception e)
             {
@@ -36,11 +36,11 @@ namespace Archivos
 
             try
             {
-                using (StreamReader sw = new StreamReader(archivo, true))
+                using (StreamReader sw = new StreamReader(archivo, Encoding.UTF8))
                 {
                     datos = sw.ReadToEnd();
+                    retValue = true;
                 }
-                retValue = true;
             }
             catch (Exception e)
             {

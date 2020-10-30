@@ -14,7 +14,7 @@ namespace Excepciones
         }
 
         public NacionalidadInvalidaException()
-            : base("Nacionalidad invalida...")
+            : base("La nacionalidad no se condice con el numero de DNI")
         {
         }
 

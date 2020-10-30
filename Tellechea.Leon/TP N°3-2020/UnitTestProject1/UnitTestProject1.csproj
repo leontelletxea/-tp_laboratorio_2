@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C023926-DAAE-4625-A388-28DBB1AA0648}</ProjectGuid>
+    <ProjectGuid>{283250DF-4033-4FAD-9817-91A610E1D9E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTestProject1</RootNamespace>
@@ -49,8 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Test_ListaIntanciada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test_DniInvalidoException.cs" />
+    <Compile Include="NacionalidadInvalidaException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

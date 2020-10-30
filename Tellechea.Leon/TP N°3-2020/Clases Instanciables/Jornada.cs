@@ -74,9 +74,10 @@ namespace Clases_Instanciables
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(this.clase.ToString());
+            sb.Append($"CLASE DE: {this.clase.ToString()} ");
             sb.AppendLine(this.instructor.ToString());
 
+            sb.AppendLine("ALUMNOS:");
             if(this.alumnos != null)
             {
                 foreach (Alumno a in this.alumnos)

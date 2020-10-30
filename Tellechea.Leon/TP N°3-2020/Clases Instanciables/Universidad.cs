@@ -222,26 +222,14 @@ namespace Clases_Instanciables
         {
             StringBuilder sb = new StringBuilder();
 
-            if(uni.alumnos != null)
-                sb.AppendLine("Alumnos: ");
-            foreach (Alumno a in uni.alumnos)
-            {
-                sb.AppendLine(a.ToString());
-            }
-
             if (uni.jornada != null)
-                sb.AppendLine("Jornadas: ");
+                sb.AppendLine("JORNADA: ");
             foreach (Jornada j in uni.jornada)
             {
                 sb.AppendLine(j.ToString());
+                sb.AppendLine("<----------------------------------->");
             }
-
-            if (uni.profesores != null)
-                sb.AppendLine("Profesores: ");
-            foreach (Profesor p in uni.profesores)
-            {
-                sb.AppendLine(p.ToString());
-            }
+            
 
             return sb.ToString();
         }

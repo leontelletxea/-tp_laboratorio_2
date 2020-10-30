@@ -7,7 +7,7 @@ using EntidadesAbstractas;
 
 namespace Clases_Instanciables
 {
-    public sealed class Alumno : Universitario
+    public sealed class Alumno : EntidadesAbstractas.Universitario
     {
         public enum EEstadoCuenta
         {
@@ -40,8 +40,8 @@ namespace Clases_Instanciables
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.MostrarDatos());
-            sb.AppendLine($"Toma clase de: {this.claseQueToma}");
-            sb.AppendLine($"Estado de cuenta: {this.estadoCuenta}");
+            sb.AppendLine($"\nESTADO DE CUENTA: {this.estadoCuenta}");
+            sb.AppendLine(ParticiparEnClase());
 
             return sb.ToString();
         }

@@ -116,7 +116,7 @@ namespace EntidadesAbstractas
 
             if(int.TryParse(dato, out datoEntero) == true && dato.Length == 0 || dato.Length > 8)
             {
-                ret = ValidarDni(nacionalidad, datoEntero);
+                ret = ValidarDni(nacionalidad, Convert.ToInt32(datoEntero));
             }
             else
             {
@@ -150,8 +150,8 @@ namespace EntidadesAbstractas
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Nombre Completo: {this.apellido} {this.nombre}");
-            sb.AppendLine($"Nacionalidad: {this.nacionalidad}");
+            sb.AppendLine($"POR NOMBRE COMPLETO: {this.apellido}, {this.nombre}");
+            sb.AppendLine($"NACIONALIDAD: {this.nacionalidad}\n");
             sb.AppendLine($"DNI: {this.dni}");
 
             return sb.ToString();

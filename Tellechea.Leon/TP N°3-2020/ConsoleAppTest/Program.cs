@@ -14,15 +14,15 @@ namespace ConsoleAppTest
     {
         static void Main(string[] args)
         {
-            Universidad uni = new Universidad();
+            Clases_Instanciables.Universidad uni = new Clases_Instanciables.Universidad();
             Alumno a1 = new Alumno(1, "Juan", "Lopez", "12234456",
-            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Clases_Instanciables.Universidad.EClases.Programacion,
             Alumno.EEstadoCuenta.Becado);
             uni += a1;
             try
             {
                 Alumno a2 = new Alumno(2, "Juana", "Martinez", "12234458",
-               EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Universidad.EClases.Laboratorio,
+               EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Clases_Instanciables.Universidad.EClases.Laboratorio,
                Alumno.EEstadoCuenta.Deudor);
                 uni += a2;
             }
@@ -33,7 +33,7 @@ namespace ConsoleAppTest
             try
             {
                 Alumno a3 = new Alumno(3, "José", "Gutierrez", "12234456",
-               EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+               EntidadesAbstractas.Persona.ENacionalidad.Argentino, Clases_Instanciables.Universidad.EClases.Programacion,
                Alumno.EEstadoCuenta.Becado);
                 uni += a3;
             }
@@ -42,23 +42,23 @@ namespace ConsoleAppTest
                 Console.WriteLine(e.Message);
             }
             Alumno a4 = new Alumno(4, "Miguel", "Hernandez", "92264456",
-            EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Universidad.EClases.Legislacion,
+            EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Clases_Instanciables.Universidad.EClases.Legislacion,
             Alumno.EEstadoCuenta.AlDia);
             uni += a4;
             Alumno a5 = new Alumno(5, "Carlos", "Gonzalez", "12236456",
-            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Clases_Instanciables.Universidad.EClases.Programacion,
             Alumno.EEstadoCuenta.AlDia);
             uni += a5;
             Alumno a6 = new Alumno(6, "Juan", "Perez", "12234656",
-            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio,
+            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Clases_Instanciables.Universidad.EClases.Laboratorio,
             Alumno.EEstadoCuenta.Deudor);
             uni += a6;
             Alumno a7 = new Alumno(7, "Joaquin", "Suarez", "91122456",
-            EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Universidad.EClases.Laboratorio,
+            EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Clases_Instanciables.Universidad.EClases.Laboratorio,
             Alumno.EEstadoCuenta.AlDia);
             uni += a7;
             Alumno a8 = new Alumno(8, "Rodrigo", "Smith", "22236456",
-            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Legislacion,
+            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Clases_Instanciables.Universidad.EClases.Legislacion,
             Alumno.EEstadoCuenta.AlDia);
             uni += a8;
             Profesor i1 = new Profesor(1, "Juan", "Lopez", "12224458",
@@ -69,7 +69,7 @@ namespace ConsoleAppTest
             uni += i2;
             try
             {
-                uni += Universidad.EClases.Programacion;
+                uni += Clases_Instanciables.Universidad.EClases.Programacion;
             }
             catch (SinProfesorException e)
             {
@@ -77,7 +77,7 @@ namespace ConsoleAppTest
             }
             try
             {
-                uni += Universidad.EClases.Laboratorio;
+                uni += Clases_Instanciables.Universidad.EClases.Laboratorio;
             }
             catch (SinProfesorException e)
             {
@@ -85,7 +85,7 @@ namespace ConsoleAppTest
             }
             try
             {
-                uni += Universidad.EClases.Legislacion;
+                uni += Clases_Instanciables.Universidad.EClases.Legislacion;
             }
             catch (SinProfesorException e)
             {
@@ -93,7 +93,7 @@ namespace ConsoleAppTest
             }
             try
             {
-                uni += Universidad.EClases.SPD;
+                uni += Clases_Instanciables.Universidad.EClases.SPD;
             }
             catch (SinProfesorException e)
             {
@@ -104,7 +104,7 @@ namespace ConsoleAppTest
             Console.Clear();
             try
             {
-                Universidad.Guardar(uni);
+                Clases_Instanciables.Universidad.Guardar(uni);
                 Console.WriteLine("Archivo de Universidad guardado.");
             }
             catch (ArchivosException e)

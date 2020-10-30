@@ -14,7 +14,7 @@ namespace Excepciones
         }
 
         public AlumnoRepetidoException()
-            : base("El alumno esta repetido...")
+            : base("Alumno repetido")
         {
         }
     }

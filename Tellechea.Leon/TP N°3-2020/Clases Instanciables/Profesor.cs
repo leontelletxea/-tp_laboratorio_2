@@ -8,7 +8,7 @@ using Excepciones;
 
 namespace Clases_Instanciables
 {
-    public sealed class Profesor : Universitario
+    public sealed class Profesor : EntidadesAbstractas.Universitario
     {
         private Queue<Universidad.EClases> clasesDelDia;
         private static Random random;
@@ -69,7 +69,7 @@ namespace Clases_Instanciables
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Clases del dia: ");
+            sb.AppendLine("CLASES DEL DIA: ");
 
             foreach (Universidad.EClases c in this.clasesDelDia)
             {

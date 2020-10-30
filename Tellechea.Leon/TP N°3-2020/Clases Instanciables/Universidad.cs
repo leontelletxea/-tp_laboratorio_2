@@ -41,25 +41,55 @@ namespace Clases_Instanciables
             set { profesores = value; }
         }
 
+        public Universidad()
+        {
+            jornada = new List<Jornada>();
+            alumnos = new List<Alumno>();
+            profesores = new List<Profesor>();
+        }
+
         public Jornada this[int i]
         {
-            get { return jornada[i]; }
-            set { jornada[i] = value; }
+            get
+            {
+                if (i >= this.jornada.Count || i < 0)
+                {
+                    return null;
+                }
+                else
+                {
+                    return this.jornada[i];
+                }
+            }
+
+            set
+            {
+                if (i >= 0 && i < this.jornada.Count)
+                {
+                    jornada[i] = value;
+                }
+                else if (i == this.jornada.Count)
+                {
+                    jornada.Add(value);
+                }
+            }
         }
 
         public static bool operator ==(Universidad g, Alumno a)
         {
             bool retValue = false;
 
-            foreach (Alumno item in g.alumnos)
+            if ((object)g != null)
             {
-                if (item == a)
+                foreach (Alumno item in g.alumnos)
                 {
-                    retValue = true;
-                    break;
+                    if (item == a)
+                    {
+                        retValue = true;
+                        break;
+                    }
                 }
             }
-
             return retValue;
         }
 
@@ -91,21 +121,29 @@ namespace Clases_Instanciables
 
         public static Universidad operator +(Universidad g, EClases clase)
         {
+            bool flag = false;
+
             foreach (Profesor p in g.profesores)
             {
                 if (p == clase)
                 {
                     Jornada j = new Jornada(clase, p);
-                    j.Instructor = p;
+                    flag = true;
                     foreach (Alumno a in g.alumnos)
                     {
                         if (a == clase)
                         {
-                            j += a; 
+                            j.Alumnos.Add(a);
                         }
                     }
+                    g.Jornada.Add(j);
                     break;
                 }
+            }
+
+            if(flag == false)
+            {
+                throw new SinProfesorException();
             }
 
             return g;
@@ -138,19 +176,20 @@ namespace Clases_Instanciables
         public static Profesor operator ==(Universidad u, EClases clase)
         {
             Profesor p = null;
-            int flag = 0;
 
-            foreach (Profesor i in u.profesores)
+            if((object)u != null)
             {
-                if (i == clase)
+                foreach (Profesor i in u.profesores)
                 {
-                    p = i;
-                    flag = 1;
-                    break;
+                    if (i == clase)
+                    {
+                        p = i;
+                        break;
+                    }
                 }
             }
 
-            if (p == null)
+            if ((object)p == null)
             {
                 throw new SinProfesorException();
             }
@@ -210,13 +249,6 @@ namespace Clases_Instanciables
         public override string ToString()
         {
             return MostrarDatos(this);
-        }
-
-        public Universidad()
-        {
-            alumnos = new List<Alumno>();
-            jornada = new List<Jornada>();
-            profesores = new List<Profesor>();
         }
 
         public static bool Guardar(Universidad uni)

@@ -37,7 +37,7 @@ namespace Clases_Instanciables
             alumnos = new List<Alumno>();
         }
 
-        public Jornada(Universidad.EClases clase, Profesor instructor)
+        public Jornada(Universidad.EClases clase, Profesor instructor) : this()
         {
             this.clase = clase;
             this.instructor = instructor;

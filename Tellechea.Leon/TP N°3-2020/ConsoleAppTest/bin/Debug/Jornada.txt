@@ -1,0 +1,19 @@
+Laboratorio
+Nombre Completo: Juarez Roberto
+Nacionalidad: Argentino
+DNI: 32234456
+Legajo: 2
+
+Clases del dia: 
+Laboratorio
+
+
+Nombre Completo: Suarez Joaquin
+Nacionalidad: Extranjero
+DNI: 91122456
+Legajo: 7
+
+Toma clase de: Laboratorio
+Estado de cuenta: AlDia
+
+

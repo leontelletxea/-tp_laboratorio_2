@@ -27,7 +27,6 @@ namespace Clases_Instanciables
             : base(id, nombre, apellido, dni, nacionalidad)
         {
             this.claseQueToma = claseQueToma;
-            this.estadoCuenta = EEstadoCuenta.AlDia;
         }
 
         public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, Universidad.EClases claseQueToma, EEstadoCuenta estadoCuenta)

@@ -41,7 +41,7 @@ namespace UnitTestProject1
             }
         }
 
-        /**[TestMethod]
+        [TestMethod]
         public void Test_AlumnoRepetidoException()
         {
             try
@@ -58,6 +58,21 @@ namespace UnitTestProject1
             {
                 Assert.IsInstanceOfType(e, typeof(AlumnoRepetidoException));
             }
-        }*/
+        }
+
+        [TestMethod]
+        public void Test_InstanciarListaDeAlumnos()
+        {
+            try
+            {
+                Universidad universidad = new Universidad();
+                Assert.IsNotNull(universidad.Alumnos);
+            }
+            catch (NullReferenceException e)
+            {
+
+                Assert.Fail("La lista Alumnos de Universidad no se pudo instanciar");
+            }
+        }
     }
 }

@@ -202,11 +202,6 @@ namespace Clases_Instanciables
                 }
             }
 
-            if ((object)p == null)
-            {
-                throw new SinProfesorException();
-            }
-
             return p;
         }
 

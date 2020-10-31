@@ -54,7 +54,7 @@ namespace Clases_Instanciables
             for (int i = 0; i < 2; i++)
             {
 
-                switch (Profesor.random.Next(0, 3))
+                switch (Profesor.random.Next(0, 4))
                 {
                     case 0:
                         this.clasesDelDia.Enqueue(Universidad.EClases.Programacion);

@@ -120,11 +120,19 @@ namespace Clases_Instanciables
 
             if (this.alumnos != null)
             {
-                sb.AppendLine("ALUMNOS:");
-                foreach (Alumno a in this.alumnos)
+                if(this.alumnos.Count > 0)
                 {
-                    sb.Append(a.ToString());
+                    sb.AppendLine("ALUMNOS:");
+                    foreach (Alumno a in this.alumnos)
+                    {
+                        sb.Append(a.ToString());
+                    }
                 }
+                else
+                {
+                    sb.AppendLine("NO HAY ALUMNOS PARA LA CLASE");
+                }
+
             }
 
             return sb.ToString();

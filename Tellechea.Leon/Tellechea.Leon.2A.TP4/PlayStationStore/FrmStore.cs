@@ -61,8 +61,8 @@ namespace PlayStationStore
                 this.da = new SqlDataAdapter();
 
                 this.da.SelectCommand = new SqlCommand("SELECT id, precio, almacenamiento, lanzamiento, modelo, peso FROM tabla_store", cn);
-                this.da.InsertCommand = new SqlCommand("INSERT INTO tabla_store (precio, almacenamiento, lanzamiento, modelo, peso) VALUES (@precio, @almacenamiento, @lanzamiento @modelo @peso)", cn);
-                this.da.UpdateCommand = new SqlCommand("UPDATE tabla_store SET precio=@precio, almacenamiento=@almacenamiento, lanzamiento=@lanzamiento modelo=@modelo peso=@peso WHERE id=@id", cn);
+                this.da.InsertCommand = new SqlCommand("INSERT INTO tabla_store (precio, almacenamiento, lanzamiento, modelo, peso) VALUES (@precio, @almacenamiento, @lanzamiento, @modelo, @peso)", cn);
+                this.da.UpdateCommand = new SqlCommand("UPDATE tabla_store SET precio=@precio, almacenamiento=@almacenamiento, lanzamiento=@lanzamiento, modelo=@modelo, peso=@peso WHERE id=@id", cn);
                 this.da.DeleteCommand = new SqlCommand("DELETE FROM tabla_store WHERE id=@id", cn);
 
                 this.da.InsertCommand.Parameters.Add("@precio", SqlDbType.Float, 15, "precio");
@@ -118,7 +118,7 @@ namespace PlayStationStore
             this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.BurlyWood;
 
             // Pongo color de fondo a la grilla
-            this.dataGridView1.BackgroundColor = Color.Beige;
+            this.dataGridView1.BackgroundColor = Color.DarkGray;
 
             // Defino fuente para el encabezado y alineación del encabezado
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);

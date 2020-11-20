@@ -33,6 +33,7 @@ namespace PlayStationStore
             this.txtPrecio.Text = p.Precio.ToString();
             this.txtAlmacenamiento.Text = p.Almacenamiento.ToString();
             this.txtLanzamiento.Text = p.Lanzamiento;
+            this.txtModelo.Text = p.Modelo;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

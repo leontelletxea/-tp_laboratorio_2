@@ -211,7 +211,7 @@ namespace PlayStationStore
             int almacenamiento = int.Parse(fila["almacenamiento"].ToString());
             string lanzamiento = fila["lanzamiento"].ToString();
 
-            if(fila["modelo"] != null)
+            if (fila["modelo"].ToString() != "")
             {
                 string modelo = fila["modelo"].ToString();
 
@@ -229,7 +229,7 @@ namespace PlayStationStore
                     fila["modelo"] = frm.PlayStation.Modelo;
                 }
             }
-            else if(fila["peso"] != null)
+            else
             {
                 float peso = float.Parse(fila["peso"].ToString());
 
@@ -245,6 +245,49 @@ namespace PlayStationStore
                     fila["almacenamiento"] = frm.VR.Almacenamiento;
                     fila["lanzamiento"] = frm.VR.Lanzamiento;
                     fila["peso"] = frm.VR.Peso;
+                }
+            }
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            int i = this.dataGridView1.SelectedRows[0].Index;
+
+            DataRow fila = this.dt.Rows[i];
+
+            int id = int.Parse(fila["id"].ToString());
+            float precio = float.Parse(fila["precio"].ToString());
+            int almacenamiento = int.Parse(fila["almacenamiento"].ToString());
+            string lanzamiento = fila["lanzamiento"].ToString();
+
+            if (fila["modelo"].ToString() != "")
+            {
+                string modelo = fila["modelo"].ToString();
+
+                PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
+
+                FrmPlayStation frm = new FrmPlayStation(p);
+
+                frm.StartPosition = FormStartPosition.CenterScreen;
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    fila.Delete();
+                }
+            }
+            else
+            {
+                float peso = float.Parse(fila["peso"].ToString());
+
+                VR v = new VR(id, precio, almacenamiento, lanzamiento, peso);
+
+                FrmVR frm = new FrmVR(v);
+
+                frm.StartPosition = FormStartPosition.CenterScreen;
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    fila.Delete();
                 }
             }
         }

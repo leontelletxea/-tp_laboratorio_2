@@ -273,6 +273,8 @@ namespace PlayStationStore
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     fila.Delete();
+                    Tickets<PlayStation>.ImprimirTiket(p);
+                    MessageBox.Show($"Venta de: {p}\nSe imprimio el ticket!");
                 }
             }
             else
@@ -288,6 +290,8 @@ namespace PlayStationStore
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     fila.Delete();
+                    Tickets<VR>.ImprimirTiket(v);
+                    MessageBox.Show($"Venta de: {v}\nSe imprimio el ticket!");
                 }
             }
         }

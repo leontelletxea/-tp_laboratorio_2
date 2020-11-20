@@ -12,7 +12,7 @@ namespace Entidades
     public class Venta<T> : ISerializable<T> where T : Sony
     {
         public List<T> listaProductos;
-        public int capacidad; // Implementar y agregar el operador -
+        public int capacidad;
 
         public Venta()
         {

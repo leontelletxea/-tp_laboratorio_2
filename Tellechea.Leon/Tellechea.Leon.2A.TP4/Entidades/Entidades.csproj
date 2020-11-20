@@ -50,6 +50,7 @@
     <Compile Include="Jerarquia\Venta.cs" />
     <Compile Include="Excepciones\VentaException.cs" />
     <Compile Include="Jerarquia\VR.cs" />
+    <Compile Include="Tickets.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

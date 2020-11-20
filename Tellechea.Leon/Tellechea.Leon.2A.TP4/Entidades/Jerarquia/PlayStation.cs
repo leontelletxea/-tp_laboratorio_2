@@ -26,6 +26,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine(this.GetType().Name);
             sb.Append(base.ToString());
             sb.AppendLine($"Modelo: {this.modelo}");
 

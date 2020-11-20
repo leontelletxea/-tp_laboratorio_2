@@ -1,0 +1,6 @@
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\Entidades\bin\Debug\Entidades.dll
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\Entidades\obj\Debug\Entidades.dll
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\Entidades\obj\Debug\Entidades.pdb

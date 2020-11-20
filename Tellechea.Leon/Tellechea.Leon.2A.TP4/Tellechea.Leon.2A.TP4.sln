@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Unitarios", "Test Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayStationStore", "PlayStationStore\PlayStationStore.csproj", "{08730B19-0B09-4407-AC81-6BDE2A203416}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{FBC065A5-686D-4A1C-BC38-918E6D052427}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{08730B19-0B09-4407-AC81-6BDE2A203416}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08730B19-0B09-4407-AC81-6BDE2A203416}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08730B19-0B09-4407-AC81-6BDE2A203416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC065A5-686D-4A1C-BC38-918E6D052427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC065A5-686D-4A1C-BC38-918E6D052427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC065A5-686D-4A1C-BC38-918E6D052427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC065A5-686D-4A1C-BC38-918E6D052427}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

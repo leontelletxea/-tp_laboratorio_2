@@ -112,20 +112,20 @@ namespace PlayStationStore
         private void ConfigurarGrilla()
         {
             // Coloco color de fondo para las filas
-            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Wheat;
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.DarkSlateBlue;
 
             // Alterno colores
-            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.BurlyWood;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSeaGreen;
 
             // Pongo color de fondo a la grilla
-            this.dataGridView1.BackgroundColor = Color.DarkGray;
+            this.dataGridView1.BackgroundColor = Color.DarkSlateGray;
 
             // Defino fuente para el encabezado y alineación del encabezado
-            this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Regular);
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // Defino el color de las lineas de separación
-            this.dataGridView1.GridColor = Color.HotPink;
+            this.dataGridView1.GridColor = Color.Black;
 
             // La grilla será de sólo lectura
             this.dataGridView1.ReadOnly = false;
@@ -140,8 +140,7 @@ namespace PlayStationStore
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // Indico el color de la fila seleccionada
-            this.dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.DarkOliveGreen;
-            this.dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            this.dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.LimeGreen;
 
             // No permito modificar desde la grilla
             this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;

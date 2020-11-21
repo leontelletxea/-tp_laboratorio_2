@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades.Excepciones;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace Entidades
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                throw new ArchivosException("Error al imprimir el ticket", e);
             }
 
             return retValue;

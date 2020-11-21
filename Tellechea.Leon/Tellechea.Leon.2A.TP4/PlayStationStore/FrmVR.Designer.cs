@@ -31,7 +31,6 @@
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.lblPeso = new System.Windows.Forms.Label();
             this.txtLanzamiento = new System.Windows.Forms.TextBox();
-            this.txtAlmacenamiento = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblLanzamiento = new System.Windows.Forms.Label();
@@ -40,11 +39,12 @@
             this.lblId = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.cmbAlmacenamiento = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(40, 232);
+            this.txtPeso.Location = new System.Drawing.Point(49, 248);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(216, 20);
             this.txtPeso.TabIndex = 43;
@@ -52,7 +52,7 @@
             // lblPeso
             // 
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(37, 216);
+            this.lblPeso.Location = new System.Drawing.Point(46, 232);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(31, 13);
             this.lblPeso.TabIndex = 42;
@@ -60,36 +60,30 @@
             // 
             // txtLanzamiento
             // 
-            this.txtLanzamiento.Location = new System.Drawing.Point(40, 185);
+            this.txtLanzamiento.Location = new System.Drawing.Point(49, 201);
             this.txtLanzamiento.Name = "txtLanzamiento";
             this.txtLanzamiento.Size = new System.Drawing.Size(216, 20);
             this.txtLanzamiento.TabIndex = 41;
             // 
-            // txtAlmacenamiento
-            // 
-            this.txtAlmacenamiento.Location = new System.Drawing.Point(40, 135);
-            this.txtAlmacenamiento.Name = "txtAlmacenamiento";
-            this.txtAlmacenamiento.Size = new System.Drawing.Size(216, 20);
-            this.txtAlmacenamiento.TabIndex = 40;
-            // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(40, 88);
+            this.txtPrecio.Location = new System.Drawing.Point(49, 104);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(216, 20);
             this.txtPrecio.TabIndex = 39;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(40, 43);
+            this.txtId.Location = new System.Drawing.Point(49, 59);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(216, 20);
             this.txtId.TabIndex = 38;
             // 
             // lblLanzamiento
             // 
             this.lblLanzamiento.AutoSize = true;
-            this.lblLanzamiento.Location = new System.Drawing.Point(37, 169);
+            this.lblLanzamiento.Location = new System.Drawing.Point(46, 185);
             this.lblLanzamiento.Name = "lblLanzamiento";
             this.lblLanzamiento.Size = new System.Drawing.Size(67, 13);
             this.lblLanzamiento.TabIndex = 37;
@@ -98,7 +92,7 @@
             // lblAlmacenamiento
             // 
             this.lblAlmacenamiento.AutoSize = true;
-            this.lblAlmacenamiento.Location = new System.Drawing.Point(37, 119);
+            this.lblAlmacenamiento.Location = new System.Drawing.Point(46, 135);
             this.lblAlmacenamiento.Name = "lblAlmacenamiento";
             this.lblAlmacenamiento.Size = new System.Drawing.Size(85, 13);
             this.lblAlmacenamiento.TabIndex = 36;
@@ -107,7 +101,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(37, 72);
+            this.lblPrecio.Location = new System.Drawing.Point(46, 88);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 35;
@@ -116,7 +110,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(37, 27);
+            this.lblId.Location = new System.Drawing.Point(46, 43);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 13);
             this.lblId.TabIndex = 34;
@@ -124,7 +118,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(181, 271);
+            this.btnCancelar.Location = new System.Drawing.Point(190, 287);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 33;
@@ -134,7 +128,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(40, 271);
+            this.btnAceptar.Location = new System.Drawing.Point(49, 287);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 32;
@@ -142,15 +136,27 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // cmbAlmacenamiento
+            // 
+            this.cmbAlmacenamiento.FormattingEnabled = true;
+            this.cmbAlmacenamiento.Items.AddRange(new object[] {
+            "RAM1GB",
+            "RAM2GB",
+            "RAM3GB"});
+            this.cmbAlmacenamiento.Location = new System.Drawing.Point(49, 151);
+            this.cmbAlmacenamiento.Name = "cmbAlmacenamiento";
+            this.cmbAlmacenamiento.Size = new System.Drawing.Size(216, 21);
+            this.cmbAlmacenamiento.TabIndex = 44;
+            // 
             // FrmVR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 353);
+            this.Controls.Add(this.cmbAlmacenamiento);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.lblPeso);
             this.Controls.Add(this.txtLanzamiento);
-            this.Controls.Add(this.txtAlmacenamiento);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblLanzamiento);
@@ -171,7 +177,6 @@
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.TextBox txtLanzamiento;
-        private System.Windows.Forms.TextBox txtAlmacenamiento;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblLanzamiento;
@@ -180,5 +185,6 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ComboBox cmbAlmacenamiento;
     }
 }

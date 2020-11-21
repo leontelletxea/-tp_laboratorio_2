@@ -67,19 +67,19 @@ namespace PlayStationStore
 
                 this.da = new SqlDataAdapter();
 
-                this.da.SelectCommand = new SqlCommand("SELECT id, precio, almacenamiento, lanzamiento, modelo, peso FROM tabla_store", cn);
-                this.da.InsertCommand = new SqlCommand("INSERT INTO tabla_store (precio, almacenamiento, lanzamiento, modelo, peso) VALUES (@precio, @almacenamiento, @lanzamiento, @modelo, @peso)", cn);
-                this.da.UpdateCommand = new SqlCommand("UPDATE tabla_store SET precio=@precio, almacenamiento=@almacenamiento, lanzamiento=@lanzamiento, modelo=@modelo, peso=@peso WHERE id=@id", cn);
-                this.da.DeleteCommand = new SqlCommand("DELETE FROM tabla_store WHERE id=@id", cn);
+                this.da.SelectCommand = new SqlCommand("SELECT id, precio, almacenamiento, lanzamiento, modelo, peso FROM Store", cn);
+                this.da.InsertCommand = new SqlCommand("INSERT INTO Store (precio, almacenamiento, lanzamiento, modelo, peso) VALUES (@precio, @almacenamiento, @lanzamiento, @modelo, @peso)", cn);
+                this.da.UpdateCommand = new SqlCommand("UPDATE Store SET precio=@precio, almacenamiento=@almacenamiento, lanzamiento=@lanzamiento, modelo=@modelo, peso=@peso WHERE id=@id", cn);
+                this.da.DeleteCommand = new SqlCommand("DELETE FROM Store WHERE id=@id", cn);
 
                 this.da.InsertCommand.Parameters.Add("@precio", SqlDbType.Float, 15, "precio");
-                this.da.InsertCommand.Parameters.Add("@almacenamiento", SqlDbType.Int, 10, "almacenamiento");
+                this.da.InsertCommand.Parameters.Add("@almacenamiento", SqlDbType.VarChar, 50, "almacenamiento");
                 this.da.InsertCommand.Parameters.Add("@lanzamiento", SqlDbType.VarChar, 50, "lanzamiento");
                 this.da.InsertCommand.Parameters.Add("@modelo", SqlDbType.VarChar, 50, "modelo");
                 this.da.InsertCommand.Parameters.Add("@peso", SqlDbType.Float, 15, "peso");
 
                 this.da.UpdateCommand.Parameters.Add("@precio", SqlDbType.Float, 15, "precio");
-                this.da.UpdateCommand.Parameters.Add("@almacenamiento", SqlDbType.Int, 10, "almacenamiento");
+                this.da.UpdateCommand.Parameters.Add("@almacenamiento", SqlDbType.VarChar, 50, "almacenamiento");
                 this.da.UpdateCommand.Parameters.Add("@lanzamiento", SqlDbType.VarChar, 50, "lanzamiento");
                 this.da.UpdateCommand.Parameters.Add("@id", SqlDbType.Int, 10, "id");
                 this.da.UpdateCommand.Parameters.Add("@modelo", SqlDbType.VarChar, 50, "modelo");
@@ -100,11 +100,11 @@ namespace PlayStationStore
 
         private void ConfigurarDataTable()
         {
-            this.dt = new DataTable("tabla_store");
+            this.dt = new DataTable("Store");
 
             this.dt.Columns.Add("id", typeof(int));
             this.dt.Columns.Add("precio", typeof(float));
-            this.dt.Columns.Add("almacenamiento", typeof(int));
+            this.dt.Columns.Add("almacenamiento", typeof(string));
             this.dt.Columns.Add("lanzamiento", typeof(string));
             this.dt.Columns.Add("modelo", typeof(string));
             this.dt.Columns.Add("peso", typeof(float));
@@ -119,13 +119,13 @@ namespace PlayStationStore
         private void ConfigurarGrilla()
         {
             // Coloco color de fondo para las filas
-            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.DarkSlateBlue;
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Gray;
 
             // Alterno colores
-            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSeaGreen;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
 
             // Pongo color de fondo a la grilla
-            this.dataGridView1.BackgroundColor = Color.DarkSlateGray;
+            this.dataGridView1.BackgroundColor = Color.Blue;
 
             // Defino fuente para el encabezado y alineación del encabezado
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Regular);
@@ -147,7 +147,8 @@ namespace PlayStationStore
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // Indico el color de la fila seleccionada
-            this.dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.LimeGreen;
+            this.dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Lime;
+            this.dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
 
             // No permito modificar desde la grilla
             this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -214,12 +215,12 @@ namespace PlayStationStore
 
             int id = int.Parse(fila["id"].ToString());
             float precio = float.Parse(fila["precio"].ToString());
-            int almacenamiento = int.Parse(fila["almacenamiento"].ToString());
+            string almacenamiento = fila["almacenamiento"].ToString();
             string lanzamiento = fila["lanzamiento"].ToString();
 
             if (fila["modelo"].ToString() != "")
             {
-                string modelo = fila["modelo"].ToString();
+                int modelo = int.Parse(fila["modelo"].ToString());
 
                 PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
 
@@ -261,46 +262,53 @@ namespace PlayStationStore
 
             DataRow fila = this.dt.Rows[i];
 
-            int id = int.Parse(fila["id"].ToString());
-            float precio = float.Parse(fila["precio"].ToString());
-            int almacenamiento = int.Parse(fila["almacenamiento"].ToString());
-            string lanzamiento = fila["lanzamiento"].ToString();
-
-            if (fila["modelo"].ToString() != "")
+            try
             {
-                string modelo = fila["modelo"].ToString();
-                PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
-                FrmPlayStation frm = new FrmPlayStation(p);
+                int id = int.Parse(fila["id"].ToString());
+                float precio = float.Parse(fila["precio"].ToString());
+                string almacenamiento = fila["almacenamiento"].ToString();
+                string lanzamiento = fila["lanzamiento"].ToString();
 
-                this.psSeleccionado = p;
-                this.EventoVender += psSeleccionado_EventoVender;
-
-                frm.StartPosition = FormStartPosition.CenterScreen;
-
-                if (frm.ShowDialog() == DialogResult.OK)
+                if (fila["modelo"].ToString() != "")
                 {
-                    fila.Delete();
-                    this.EventoVender(this, EventArgs.Empty);
+                    int modelo = int.Parse(fila["modelo"].ToString());
+                    PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
+                    FrmPlayStation frm = new FrmPlayStation(p);
+
+                    this.psSeleccionado = p;
+                    this.EventoVender += psSeleccionado_EventoVender;
+
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        fila.Delete();
+                        this.EventoVender(this, EventArgs.Empty);
+                    }
+                }
+                else
+                {
+                    float peso = float.Parse(fila["peso"].ToString());
+
+                    VR v = new VR(id, precio, almacenamiento, lanzamiento, peso);
+
+                    FrmVR frm = new FrmVR(v);
+
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        fila.Delete();
+                        MessageBox.Show($"Venta de: {v}\nSe imprimio el ticket!");
+
+                        Thread tarea = new Thread(CargarFormularioGif);
+                        tarea.Start();
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                float peso = float.Parse(fila["peso"].ToString());
-
-                VR v = new VR(id, precio, almacenamiento, lanzamiento, peso);
-
-                FrmVR frm = new FrmVR(v);
-
-                frm.StartPosition = FormStartPosition.CenterScreen;
-
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    fila.Delete();
-                    MessageBox.Show($"Venta de: {v}\nSe imprimio el ticket!");
-
-                    Thread tarea = new Thread(CargarFormularioGif);
-                    tarea.Start();
-                }
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -312,12 +320,12 @@ namespace PlayStationStore
         private void psSeleccionado_EventoVender(object sender, EventArgs e)
         {
             Random random = new Random();
-            int ganador = random.Next(1, 100);
+            int puntos = random.Next(1, 10000);
             bool todoOK = Tickets<PlayStation>.ImprimirTiket(this.psSeleccionado);
 
             if (todoOK)
             {
-                MessageBox.Show($"Venta de: {this.psSeleccionado}\nSe imprimio el ticket!\nNUEVO SORTEO GANADOR: N°{ganador}");
+                MessageBox.Show($"Venta de: {this.psSeleccionado}\nSe imprimio el ticket!\nPUNTOS ACUMULADOS: {puntos}");
             }
             else
             {

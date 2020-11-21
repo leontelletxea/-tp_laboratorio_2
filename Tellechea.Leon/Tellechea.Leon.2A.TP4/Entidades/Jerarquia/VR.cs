@@ -14,7 +14,7 @@ namespace Entidades
         {
         }
 
-        public VR(int id, float precio, int almacenamiento, string lanzamiento, float peso)
+        public VR(int id, float precio, string almacenamiento, string lanzamiento, float peso)
             : base(id, precio, almacenamiento, lanzamiento)
         {
             this.peso = peso;

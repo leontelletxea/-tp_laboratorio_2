@@ -61,7 +61,7 @@ namespace Entidades
                     }
                     else
                     {
-                       Console.WriteLine("El producto ya se encuentra en la lista");
+                        Console.WriteLine("El producto ya se encuentra en la lista");
                     }
                 }
                 else
@@ -71,7 +71,7 @@ namespace Entidades
             }
             catch(Exception e)
             {
-                throw new VentaException("Error al agregar el producto a la lista", e);
+                throw new Exception("Error al agregar el producto a la lista", e);
             }
 
             return venta;

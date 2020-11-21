@@ -13,19 +13,19 @@ namespace Entidades
     {
         private int id;
         private float precio;
-        private int almacenamiento;
+        private string almacenamiento;
         private string lanzamiento;
 
         public Int32 Id { get => id; set => id = value; }
         public Single Precio { get => precio; set => precio = value; }
-        public Int32 Almacenamiento { get => almacenamiento; set => almacenamiento = value; }
+        public String Almacenamiento { get => almacenamiento; set => almacenamiento = value; }
         public String Lanzamiento { get => lanzamiento; set => lanzamiento = value; }
 
         public Sony()
         {
         }
 
-        public Sony(int id, float precio, int almacenamiento, string lanzamiento)
+        public Sony(int id, float precio, string almacenamiento, string lanzamiento)
         {
             this.id = id;
             this.precio = precio;

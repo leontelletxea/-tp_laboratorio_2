@@ -8,19 +8,19 @@ namespace Entidades
 {
     public class PlayStation : Sony
     {
-        private string modelo;
+        private int modelo;
 
         public PlayStation()
         {
         }
 
-        public PlayStation(int id, float precio, int almacenamiento, string lanzamiento, string modelo)
+        public PlayStation(int id, float precio, string almacenamiento, string lanzamiento, int modelo)
             : base(id, precio, almacenamiento, lanzamiento)
         {
             this.modelo = modelo;
         }
 
-        public String Modelo { get => modelo; set => modelo = value; }
+        public Int32 Modelo { get => modelo; set => modelo = value; }
 
         public override string ToString()
         {
@@ -28,7 +28,7 @@ namespace Entidades
 
             sb.AppendLine(this.GetType().Name);
             sb.Append(base.ToString());
-            sb.AppendLine($"Modelo: {this.modelo}");
+            sb.AppendLine($"Modelo: {this.GetType().Name} {this.modelo}");
 
             return sb.ToString();
         }

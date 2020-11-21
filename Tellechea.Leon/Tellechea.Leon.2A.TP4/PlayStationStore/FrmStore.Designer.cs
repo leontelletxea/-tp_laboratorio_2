@@ -49,9 +49,9 @@
             // 
             // btnSincronizar
             // 
-            this.btnSincronizar.Location = new System.Drawing.Point(693, 222);
+            this.btnSincronizar.Location = new System.Drawing.Point(639, 256);
             this.btnSincronizar.Name = "btnSincronizar";
-            this.btnSincronizar.Size = new System.Drawing.Size(88, 42);
+            this.btnSincronizar.Size = new System.Drawing.Size(72, 42);
             this.btnSincronizar.TabIndex = 15;
             this.btnSincronizar.Text = "Sincronizar";
             this.btnSincronizar.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // 
             // btnAgregarPs
             // 
-            this.btnAgregarPs.Location = new System.Drawing.Point(588, 309);
+            this.btnAgregarPs.Location = new System.Drawing.Point(568, 343);
             this.btnAgregarPs.Name = "btnAgregarPs";
-            this.btnAgregarPs.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarPs.Size = new System.Drawing.Size(98, 48);
             this.btnAgregarPs.TabIndex = 16;
             this.btnAgregarPs.Text = "Agregar PS";
             this.btnAgregarPs.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // 
             // btnAgregarVr
             // 
-            this.btnAgregarVr.Location = new System.Drawing.Point(706, 309);
+            this.btnAgregarVr.Location = new System.Drawing.Point(688, 343);
             this.btnAgregarVr.Name = "btnAgregarVr";
-            this.btnAgregarVr.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarVr.Size = new System.Drawing.Size(95, 48);
             this.btnAgregarVr.TabIndex = 17;
             this.btnAgregarVr.Text = "Agregar VR";
             this.btnAgregarVr.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(573, 222);
+            this.btnVender.Location = new System.Drawing.Point(568, 256);
             this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(90, 41);
+            this.btnVender.Size = new System.Drawing.Size(65, 42);
             this.btnVender.TabIndex = 18;
             this.btnVender.Text = "Vender";
             this.btnVender.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(655, 367);
+            this.btnModificar.Location = new System.Drawing.Point(717, 256);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(66, 42);
             this.btnModificar.TabIndex = 19;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;

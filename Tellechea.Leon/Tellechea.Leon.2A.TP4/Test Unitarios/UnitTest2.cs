@@ -14,7 +14,7 @@ namespace Test_Unitarios
             try
             {
                 bool retValue = false;
-                PlayStation p = new PlayStation(1, 600, 1000, "2020", "PlayStation5");
+                PlayStation p = new PlayStation(1, 600, "TB1", "2020", 5);
                 retValue = Tickets<PlayStation>.ImprimirTiket(p);
 
                 Assert.IsTrue(retValue);

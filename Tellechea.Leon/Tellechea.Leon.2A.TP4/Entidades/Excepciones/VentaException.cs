@@ -8,6 +8,11 @@ namespace Entidades
 {
     public class VentaException : Exception
     {
+        public VentaException(string message)
+            : base(message)
+        {
+        }
+
         public VentaException(string message, Exception e)
             : base(message , e)
         {

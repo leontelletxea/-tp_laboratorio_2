@@ -49,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 245);
+            this.label1.Location = new System.Drawing.Point(11, 245);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(288, 15);
             this.label1.TabIndex = 1;
@@ -62,15 +62,16 @@
             "Excelente",
             "Buena",
             "Regular"});
-            this.comboBox1.Location = new System.Drawing.Point(41, 279);
+            this.comboBox1.Location = new System.Drawing.Point(55, 279);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndex = 0;
             // 
             // btnEnviar
             // 
             this.btnEnviar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnEnviar.Location = new System.Drawing.Point(41, 318);
+            this.btnEnviar.Location = new System.Drawing.Point(55, 318);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(75, 23);
             this.btnEnviar.TabIndex = 3;
@@ -80,7 +81,7 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(166, 318);
+            this.btnCancelar.Location = new System.Drawing.Point(180, 318);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 4;

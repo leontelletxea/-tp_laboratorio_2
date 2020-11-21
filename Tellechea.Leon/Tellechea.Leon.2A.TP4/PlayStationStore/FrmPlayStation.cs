@@ -31,9 +31,9 @@ namespace PlayStationStore
 
             this.txtId.Text = this.p.Id.ToString();
             this.txtPrecio.Text = p.Precio.ToString();
-            this.txtAlmacenamiento.Text = p.Almacenamiento.ToString();
+            this.cmbAlmacenamiento.Text = p.Almacenamiento.ToString();
             this.txtLanzamiento.Text = p.Lanzamiento;
-            this.txtModelo.Text = p.Modelo;
+            this.cmbModelo.Text = p.Modelo.ToString();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace PlayStationStore
             string id = this.txtId.Text;
             id = id == "" ? "0" : id;
 
-            this.p = new PlayStation(int.Parse(id), float.Parse(this.txtPrecio.Text), int.Parse(this.txtAlmacenamiento.Text), this.txtLanzamiento.Text, this.txtModelo.Text);
+            this.p = new PlayStation(int.Parse(id), float.Parse(this.txtPrecio.Text), this.cmbAlmacenamiento.Text, this.txtLanzamiento.Text, int.Parse(this.cmbModelo.Text));
 
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
 

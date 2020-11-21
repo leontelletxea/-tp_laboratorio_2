@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.txtLanzamiento = new System.Windows.Forms.TextBox();
-            this.txtAlmacenamiento = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblLanzamiento = new System.Windows.Forms.Label();
@@ -38,42 +37,37 @@
             this.lblId = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtModelo = new System.Windows.Forms.TextBox();
             this.lblModelo = new System.Windows.Forms.Label();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
+            this.cmbAlmacenamiento = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtLanzamiento
             // 
-            this.txtLanzamiento.Location = new System.Drawing.Point(46, 194);
+            this.txtLanzamiento.Location = new System.Drawing.Point(49, 201);
             this.txtLanzamiento.Name = "txtLanzamiento";
             this.txtLanzamiento.Size = new System.Drawing.Size(216, 20);
             this.txtLanzamiento.TabIndex = 29;
             // 
-            // txtAlmacenamiento
-            // 
-            this.txtAlmacenamiento.Location = new System.Drawing.Point(46, 144);
-            this.txtAlmacenamiento.Name = "txtAlmacenamiento";
-            this.txtAlmacenamiento.Size = new System.Drawing.Size(216, 20);
-            this.txtAlmacenamiento.TabIndex = 28;
-            // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(46, 97);
+            this.txtPrecio.Location = new System.Drawing.Point(49, 104);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(216, 20);
             this.txtPrecio.TabIndex = 27;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(46, 52);
+            this.txtId.Location = new System.Drawing.Point(49, 59);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(216, 20);
             this.txtId.TabIndex = 26;
             // 
             // lblLanzamiento
             // 
             this.lblLanzamiento.AutoSize = true;
-            this.lblLanzamiento.Location = new System.Drawing.Point(43, 178);
+            this.lblLanzamiento.Location = new System.Drawing.Point(46, 185);
             this.lblLanzamiento.Name = "lblLanzamiento";
             this.lblLanzamiento.Size = new System.Drawing.Size(67, 13);
             this.lblLanzamiento.TabIndex = 25;
@@ -82,7 +76,7 @@
             // lblAlmacenamiento
             // 
             this.lblAlmacenamiento.AutoSize = true;
-            this.lblAlmacenamiento.Location = new System.Drawing.Point(43, 128);
+            this.lblAlmacenamiento.Location = new System.Drawing.Point(46, 135);
             this.lblAlmacenamiento.Name = "lblAlmacenamiento";
             this.lblAlmacenamiento.Size = new System.Drawing.Size(85, 13);
             this.lblAlmacenamiento.TabIndex = 24;
@@ -91,7 +85,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(43, 81);
+            this.lblPrecio.Location = new System.Drawing.Point(46, 88);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 23;
@@ -100,7 +94,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(43, 36);
+            this.lblId.Location = new System.Drawing.Point(46, 43);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 13);
             this.lblId.TabIndex = 22;
@@ -108,7 +102,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(187, 280);
+            this.btnCancelar.Location = new System.Drawing.Point(190, 287);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 21;
@@ -118,7 +112,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(46, 280);
+            this.btnAceptar.Location = new System.Drawing.Point(49, 287);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 20;
@@ -126,31 +120,53 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // txtModelo
-            // 
-            this.txtModelo.Location = new System.Drawing.Point(46, 241);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(216, 20);
-            this.txtModelo.TabIndex = 31;
-            // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(43, 225);
+            this.lblModelo.Location = new System.Drawing.Point(46, 232);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(42, 13);
             this.lblModelo.TabIndex = 30;
             this.lblModelo.Text = "Modelo";
+            // 
+            // cmbModelo
+            // 
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Items.AddRange(new object[] {
+            "5",
+            "4",
+            "3",
+            "2",
+            "1"});
+            this.cmbModelo.Location = new System.Drawing.Point(49, 248);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(216, 21);
+            this.cmbModelo.TabIndex = 32;
+            // 
+            // cmbAlmacenamiento
+            // 
+            this.cmbAlmacenamiento.FormattingEnabled = true;
+            this.cmbAlmacenamiento.Items.AddRange(new object[] {
+            "MB8",
+            "MB16",
+            "GB250",
+            "GB500",
+            "TB1",
+            "TB2"});
+            this.cmbAlmacenamiento.Location = new System.Drawing.Point(49, 151);
+            this.cmbAlmacenamiento.Name = "cmbAlmacenamiento";
+            this.cmbAlmacenamiento.Size = new System.Drawing.Size(216, 21);
+            this.cmbAlmacenamiento.TabIndex = 33;
             // 
             // FrmPlayStation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 353);
-            this.Controls.Add(this.txtModelo);
+            this.Controls.Add(this.cmbAlmacenamiento);
+            this.Controls.Add(this.cmbModelo);
             this.Controls.Add(this.lblModelo);
             this.Controls.Add(this.txtLanzamiento);
-            this.Controls.Add(this.txtAlmacenamiento);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblLanzamiento);
@@ -170,7 +186,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtLanzamiento;
-        private System.Windows.Forms.TextBox txtAlmacenamiento;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblLanzamiento;
@@ -179,7 +194,8 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label lblModelo;
+        private System.Windows.Forms.ComboBox cmbModelo;
+        private System.Windows.Forms.ComboBox cmbAlmacenamiento;
     }
 }

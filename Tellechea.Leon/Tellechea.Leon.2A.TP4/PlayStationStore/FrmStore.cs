@@ -258,9 +258,7 @@ namespace PlayStationStore
 
         private void btnVender_Click(object sender, EventArgs e)
         {
-            int i = this.dataGridView1.SelectedRows[0].Index;
-
-            DataRow fila = this.dt.Rows[i];
+            DataRowView fila = (DataRowView)dataGridView1.CurrentRow.DataBoundItem;
 
             try
             {
@@ -275,6 +273,10 @@ namespace PlayStationStore
                     PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
                     FrmPlayStation frm = new FrmPlayStation(p);
 
+                    if (this.EventoVender != null)
+                    {
+                        this.EventoVender -= psSeleccionado_EventoVender;
+                    }
                     this.psSeleccionado = p;
                     this.EventoVender += psSeleccionado_EventoVender;
 

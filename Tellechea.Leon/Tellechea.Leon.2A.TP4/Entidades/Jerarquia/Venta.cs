@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace Entidades
 {
-    public class Venta<T> : ISerializable<T> where T : Sony
+    public class Venta<T> : ISerializable where T : Sony
     {
         public List<T> listaProductos;
         public int capacidad;
@@ -54,16 +54,14 @@ namespace Entidades
             {
                 if(venta.capacidad > venta.listaProductos.Count)
                 {
-                    foreach (T item in venta.listaProductos)
+
+                    if (venta != producto)
                     {
-                        if (venta != producto)
-                        {
-                            venta.listaProductos.Add(producto);
-                        }
-                        else
-                        {
-                            Console.WriteLine("El producto ya se encuentra en la lista");
-                        }
+                        venta.listaProductos.Add(producto);
+                    }
+                    else
+                    {
+                       Console.WriteLine("El producto ya se encuentra en la lista");
                     }
                 }
                 else
@@ -85,16 +83,15 @@ namespace Entidades
             {
                 if (venta.capacidad > 0)
                 {
-                    foreach (T item in venta.listaProductos)
+                    if (venta == producto)
                     {
-                        if (venta == producto)
-                        {
-                            venta.listaProductos.Remove(producto);
-                        }
-                        else
-                        {
-                            Console.WriteLine("El producto NO se encuentra en la lista");
-                        }
+                        venta.listaProductos.Remove(producto);
+                        Tickets<T>.ImprimirTiket(producto);
+                        Console.WriteLine($"Venta de: {producto}Se imprimio el ticket!\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("El producto NO se encuentra en la lista");
                     }
                 }
                 else
@@ -115,8 +112,9 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             if (venta.listaProductos != null)
-            {
-                sb.AppendLine("VENTAS: ");
+            {   
+                sb.AppendLine("\nLISTA DE PRODUCTOS: ");
+                sb.AppendLine($"Capacidad: {venta.capacidad}");
                 foreach (T item in venta.listaProductos)
                 {
                     sb.Append(item.ToString());
@@ -147,7 +145,7 @@ namespace Entidades
             return base.GetHashCode();
         }
 
-        public bool Serializar(string archivo, T datos)
+        public bool Serializar(string archivo, List<Sony> datos)
         {
             bool retValue = false;
 
@@ -155,10 +153,11 @@ namespace Entidades
             {
                 using (XmlTextWriter writer = new XmlTextWriter(archivo, Encoding.UTF8))
                 {
-                    XmlSerializer ser = new XmlSerializer(typeof(T));
+                    XmlSerializer ser = new XmlSerializer(typeof(List<Sony>));
                     ser.Serialize(writer, datos);
                     retValue = true;
                 }
+                Console.WriteLine("Serializado correctamente!");
             }
             catch (Exception e)
             {
@@ -168,18 +167,19 @@ namespace Entidades
             return retValue;
         }
 
-        public bool Deserializar(string archivos, out T datos)
+        public bool Deserializar(string archivo, out List<Sony> datos)
         {
             bool retValue = false;
 
             try
             {
-                using (XmlTextReader reader = new XmlTextReader(archivos))
+                using (XmlTextReader reader = new XmlTextReader(archivo))
                 {
-                    XmlSerializer ser = new XmlSerializer(typeof(T));
-                    datos = (T)ser.Deserialize(reader);
+                    XmlSerializer ser = new XmlSerializer(typeof(List<Sony>));
+                    datos = (List<Sony>)ser.Deserialize(reader);
                     retValue = true;
                 }
+                Console.WriteLine("Deserializado correctamente!");
             }
             catch (Exception e)
             {

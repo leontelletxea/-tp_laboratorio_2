@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public interface ISerializable<T>
+    public interface ISerializable
     {
-        bool Serializar(string archivo, T datos);
+        bool Serializar(string archivo, List<Sony> datos);
 
-        bool Deserializar(string archivos, out T datos);
+        bool Deserializar(string archivos, out List<Sony> datos);
     }
 }

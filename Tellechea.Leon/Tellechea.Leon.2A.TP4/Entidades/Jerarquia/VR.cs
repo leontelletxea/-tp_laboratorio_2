@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class VR : Sony
     {
-        protected float peso;
+        private float peso;
 
         public VR()
         {

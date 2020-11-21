@@ -11,7 +11,7 @@ namespace Entidades
     {
         public static bool ImprimirTiket(T t)
         {
-            string path = Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + @"\tikets.log";
+            string path = Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + @"\Tikets.log";
             bool retValue = false;
 
             StringBuilder sb = new StringBuilder();

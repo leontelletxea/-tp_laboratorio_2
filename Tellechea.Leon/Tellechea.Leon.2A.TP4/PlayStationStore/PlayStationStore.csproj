@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmGif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGif.Designer.cs">
+      <DependentUpon>FrmGif.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPlayStation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmGif.resx">
+      <DependentUpon>FrmGif.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPlayStation.resx">
       <DependentUpon>FrmPlayStation.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +111,14 @@
       <Project>{5186867b-e530-4c3d-8ef4-603c9557b23f}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="indexLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

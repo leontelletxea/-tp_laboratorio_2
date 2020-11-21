@@ -44,7 +44,7 @@
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(294, 297);
+            this.txtPeso.Location = new System.Drawing.Point(40, 232);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(216, 20);
             this.txtPeso.TabIndex = 43;
@@ -52,7 +52,7 @@
             // lblPeso
             // 
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(291, 281);
+            this.lblPeso.Location = new System.Drawing.Point(37, 216);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(31, 13);
             this.lblPeso.TabIndex = 42;
@@ -60,28 +60,28 @@
             // 
             // txtLanzamiento
             // 
-            this.txtLanzamiento.Location = new System.Drawing.Point(294, 250);
+            this.txtLanzamiento.Location = new System.Drawing.Point(40, 185);
             this.txtLanzamiento.Name = "txtLanzamiento";
             this.txtLanzamiento.Size = new System.Drawing.Size(216, 20);
             this.txtLanzamiento.TabIndex = 41;
             // 
             // txtAlmacenamiento
             // 
-            this.txtAlmacenamiento.Location = new System.Drawing.Point(294, 200);
+            this.txtAlmacenamiento.Location = new System.Drawing.Point(40, 135);
             this.txtAlmacenamiento.Name = "txtAlmacenamiento";
             this.txtAlmacenamiento.Size = new System.Drawing.Size(216, 20);
             this.txtAlmacenamiento.TabIndex = 40;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(294, 153);
+            this.txtPrecio.Location = new System.Drawing.Point(40, 88);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(216, 20);
             this.txtPrecio.TabIndex = 39;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(294, 108);
+            this.txtId.Location = new System.Drawing.Point(40, 43);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(216, 20);
             this.txtId.TabIndex = 38;
@@ -89,7 +89,7 @@
             // lblLanzamiento
             // 
             this.lblLanzamiento.AutoSize = true;
-            this.lblLanzamiento.Location = new System.Drawing.Point(291, 234);
+            this.lblLanzamiento.Location = new System.Drawing.Point(37, 169);
             this.lblLanzamiento.Name = "lblLanzamiento";
             this.lblLanzamiento.Size = new System.Drawing.Size(67, 13);
             this.lblLanzamiento.TabIndex = 37;
@@ -98,7 +98,7 @@
             // lblAlmacenamiento
             // 
             this.lblAlmacenamiento.AutoSize = true;
-            this.lblAlmacenamiento.Location = new System.Drawing.Point(291, 184);
+            this.lblAlmacenamiento.Location = new System.Drawing.Point(37, 119);
             this.lblAlmacenamiento.Name = "lblAlmacenamiento";
             this.lblAlmacenamiento.Size = new System.Drawing.Size(85, 13);
             this.lblAlmacenamiento.TabIndex = 36;
@@ -107,7 +107,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(291, 137);
+            this.lblPrecio.Location = new System.Drawing.Point(37, 72);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 35;
@@ -116,7 +116,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(291, 92);
+            this.lblId.Location = new System.Drawing.Point(37, 27);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 13);
             this.lblId.TabIndex = 34;
@@ -124,7 +124,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(435, 336);
+            this.btnCancelar.Location = new System.Drawing.Point(181, 271);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 33;
@@ -134,7 +134,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(294, 336);
+            this.btnAceptar.Location = new System.Drawing.Point(40, 271);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 32;
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(311, 353);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.lblPeso);
             this.Controls.Add(this.txtLanzamiento);

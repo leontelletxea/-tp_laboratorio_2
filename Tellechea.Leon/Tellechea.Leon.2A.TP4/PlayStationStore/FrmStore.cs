@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,10 +17,16 @@ namespace PlayStationStore
     {
         protected SqlDataAdapter da;
         protected DataTable dt;
+        protected PlayStation psSeleccionado;
+        protected delegate void Delegado(object sender, EventArgs e);
+        protected event Delegado EventoVender;
+        protected FrmGif frmGif;
 
         public FrmStore()
         {
             InitializeComponent();
+
+            this.pictureBox1.Load("indexLogo.png");
 
             this.dt = new DataTable();
             this.dataGridView1.DataSource = this.dt;
@@ -262,18 +269,18 @@ namespace PlayStationStore
             if (fila["modelo"].ToString() != "")
             {
                 string modelo = fila["modelo"].ToString();
-
                 PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
-
                 FrmPlayStation frm = new FrmPlayStation(p);
+
+                this.psSeleccionado = p;
+                this.EventoVender += psSeleccionado_EventoVender;
 
                 frm.StartPosition = FormStartPosition.CenterScreen;
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     fila.Delete();
-                    Tickets<PlayStation>.ImprimirTiket(p);
-                    MessageBox.Show($"Venta de: {p}\nSe imprimio el ticket!");
+                    this.EventoVender(this, EventArgs.Empty);
                 }
             }
             else
@@ -289,9 +296,32 @@ namespace PlayStationStore
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     fila.Delete();
-                    Tickets<VR>.ImprimirTiket(v);
                     MessageBox.Show($"Venta de: {v}\nSe imprimio el ticket!");
+
+                    Thread tarea = new Thread(CargarFormularioGif);
+                    tarea.Start();
                 }
+            }
+        }
+
+        public void CargarFormularioGif()
+        {
+            this.frmGif = new FrmGif();
+        }
+
+        private void psSeleccionado_EventoVender(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int ganador = random.Next(1, 100);
+            bool todoOK = Tickets<PlayStation>.ImprimirTiket(this.psSeleccionado);
+
+            if (todoOK)
+            {
+                MessageBox.Show($"Venta de: {this.psSeleccionado}\nSe imprimio el ticket!\nNUEVO SORTEO GANADOR: N°{ganador}");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo imprimir el ticket!!!");
             }
         }
     }

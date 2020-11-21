@@ -34,7 +34,9 @@
             this.btnAgregarVr = new System.Windows.Forms.Button();
             this.btnVender = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -42,14 +44,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(542, 426);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnSincronizar
             // 
-            this.btnSincronizar.Location = new System.Drawing.Point(76, 357);
+            this.btnSincronizar.Location = new System.Drawing.Point(693, 222);
             this.btnSincronizar.Name = "btnSincronizar";
-            this.btnSincronizar.Size = new System.Drawing.Size(75, 23);
+            this.btnSincronizar.Size = new System.Drawing.Size(88, 42);
             this.btnSincronizar.TabIndex = 15;
             this.btnSincronizar.Text = "Sincronizar";
             this.btnSincronizar.UseVisualStyleBackColor = true;
@@ -57,7 +59,7 @@
             // 
             // btnAgregarPs
             // 
-            this.btnAgregarPs.Location = new System.Drawing.Point(294, 357);
+            this.btnAgregarPs.Location = new System.Drawing.Point(588, 309);
             this.btnAgregarPs.Name = "btnAgregarPs";
             this.btnAgregarPs.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarPs.TabIndex = 16;
@@ -67,7 +69,7 @@
             // 
             // btnAgregarVr
             // 
-            this.btnAgregarVr.Location = new System.Drawing.Point(416, 357);
+            this.btnAgregarVr.Location = new System.Drawing.Point(706, 309);
             this.btnAgregarVr.Name = "btnAgregarVr";
             this.btnAgregarVr.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarVr.TabIndex = 17;
@@ -77,9 +79,9 @@
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(640, 357);
+            this.btnVender.Location = new System.Drawing.Point(573, 222);
             this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(75, 23);
+            this.btnVender.Size = new System.Drawing.Size(90, 41);
             this.btnVender.TabIndex = 18;
             this.btnVender.Text = "Vender";
             this.btnVender.UseVisualStyleBackColor = true;
@@ -87,7 +89,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(356, 397);
+            this.btnModificar.Location = new System.Drawing.Point(655, 367);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 19;
@@ -95,11 +97,23 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(573, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 189);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.btnAgregarVr);
@@ -109,6 +123,7 @@
             this.Name = "FrmStore";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,6 +136,7 @@
         private System.Windows.Forms.Button btnAgregarVr;
         private System.Windows.Forms.Button btnVender;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -13,3 +13,6 @@ C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.
 C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\PlayStationStore\obj\Debug\PlayStationStore.exe
 C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\PlayStationStore\obj\Debug\PlayStationStore.pdb
 C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\PlayStationStore\obj\Debug\PlayStationStore.FrmVR.resources
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\PlayStationStore\bin\Debug\logo.gif
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\PlayStationStore\obj\Debug\PlayStationStore.FrmGif.resources
+C:\Users\Leon\Desktop\UTNFra\Programacion & Labo II\-tp_laboratorio_2\Tellechea.Leon\Tellechea.Leon.2A.TP4\PlayStationStore\bin\Debug\indexLogo.png

@@ -57,6 +57,10 @@ namespace PlayStationStore
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
+        /// <summary>
+        /// Configura el dataAdapter
+        /// </summary>
+        /// <returns></returns> True si se configuro correctamente, false caso contrario
         private bool ConfigurarDataAdapter()
         {
             bool rta = false;
@@ -98,6 +102,9 @@ namespace PlayStationStore
             return rta;
         }
 
+        /// <summary>
+        /// Configura el DataTable
+        /// </summary>
         private void ConfigurarDataTable()
         {
             this.dt = new DataTable("Store");
@@ -116,47 +123,32 @@ namespace PlayStationStore
             this.dt.Columns["id"].AutoIncrementStep = 1;
         }
 
+        /// <summary>
+        /// Configura la grilla
+        /// </summary>
         private void ConfigurarGrilla()
         {
-            // Coloco color de fondo para las filas
             this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(201, 202, 209);
-
-            // Alterno colores
             this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(140, 141, 146);
-
-            // Pongo color de fondo a la grilla
             this.dataGridView1.BackgroundColor = Color.FromArgb(11, 31, 180);
-
-            // Defino fuente para el encabezado y alineación del encabezado
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Regular);
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            // Defino el color de las lineas de separación
             this.dataGridView1.GridColor = Color.FromArgb(17, 17, 17);
-
-            // La grilla será de sólo lectura
             this.dataGridView1.ReadOnly = false;
-
-            // No permito la multiselección
             this.dataGridView1.MultiSelect = false;
-
-            // Selecciono toda la fila a la vez
             this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            // Hago que las columnas ocupen todo el ancho del 'DataGrid'
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            // Indico el color de la fila seleccionada
             this.dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(66, 87, 241);
             this.dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(17, 17, 17);
-
-            // No permito modificar desde la grilla
             this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-
-            // Saco los encabezados de las filas
             this.dataGridView1.RowHeadersVisible = false;
         }
 
+        /// <summary>
+        /// Sincroniza los datos del DataTable con la BD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSincronizar_Click(object sender, EventArgs e)
         {
             try
@@ -171,6 +163,11 @@ namespace PlayStationStore
             }
         }
 
+        /// <summary>
+        /// Agrega el producto PlayStation al DataTable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarPs_Click(object sender, EventArgs e)
         {
             FrmPlayStation frm = new FrmPlayStation();
@@ -196,6 +193,11 @@ namespace PlayStationStore
             }
         }
 
+        /// <summary>
+        /// Agrega el producto VR al DataTable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarVr_Click(object sender, EventArgs e)
         {
             FrmVR frm = new FrmVR();
@@ -221,6 +223,11 @@ namespace PlayStationStore
             }
         }
 
+        /// <summary>
+        /// Modifica los datos del DataTable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
             int i = this.dataGridView1.SelectedRows[0].Index;
@@ -234,7 +241,7 @@ namespace PlayStationStore
                 string almacenamiento = fila["almacenamiento"].ToString();
                 string lanzamiento = fila["lanzamiento"].ToString();
 
-                if (fila["modelo"].ToString() != "")
+                if (fila["modelo"].ToString() != "") // Entonces es PlayStation
                 {
                     int modelo = int.Parse(fila["modelo"].ToString());
 
@@ -252,7 +259,7 @@ namespace PlayStationStore
                         fila["modelo"] = frm.PlayStation.Modelo;
                     }
                 }
-                else
+                else // Sino es VR
                 {
                     float peso = float.Parse(fila["peso"].ToString());
 
@@ -277,6 +284,11 @@ namespace PlayStationStore
             }
         }
 
+        /// <summary>
+        /// Elimina una fila del DataTable 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVender_Click(object sender, EventArgs e)
         {
             try
@@ -294,19 +306,19 @@ namespace PlayStationStore
                     PlayStation p = new PlayStation(id, precio, ConvertirAEnum(almacenamiento), lanzamiento, modelo);
                     FrmPlayStation frm = new FrmPlayStation(p);
 
-                    if (this.EventoVender != null)
+                    if (this.EventoVender != null) // Si fue asociado, desasocio asi no se repite la accion mas de una vez
                     {
                         this.EventoVender -= psSeleccionado_EventoVender;
                     }
                     this.psSeleccionado = p;
-                    this.EventoVender += psSeleccionado_EventoVender;
+                    this.EventoVender += psSeleccionado_EventoVender; // Asocio el manejador al evento
 
                     frm.StartPosition = FormStartPosition.CenterScreen;
 
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         fila.Delete();
-                        this.EventoVender(this, EventArgs.Empty);
+                        this.EventoVender(this, EventArgs.Empty); // Llamo al EventoVender
                     }
                 }
                 else
@@ -324,7 +336,7 @@ namespace PlayStationStore
                         fila.Delete();
                         MessageBox.Show($"Venta de: {v}\nSe imprimio el ticket!");
 
-                        Thread tarea = new Thread(CargarFormularioGif);
+                        Thread tarea = new Thread(CargarFormularioGif); // Creo un nuevo hilo
                         tarea.Start();
                     }
                 }
@@ -335,11 +347,19 @@ namespace PlayStationStore
             }
         }
 
+        /// <summary>
+        /// Carga el formulario con una encuesta por medio De un Hilo
+        /// </summary>
         public void CargarFormularioGif()
         {
             this.frmGif = new FrmGif();
         }
 
+        /// <summary>
+        /// Evento vender que llama al metodo imprimirTicket y genera un random el cual simula los puntos acumulados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void psSeleccionado_EventoVender(object sender, EventArgs e)
         {
             Random random = new Random();
@@ -348,7 +368,7 @@ namespace PlayStationStore
 
             if (todoOK)
             {
-                MessageBox.Show($"Venta de: {this.psSeleccionado}\nSe imprimio el ticket!\nPUNTOS ACUMULADOS: {puntos}");
+                MessageBox.Show($"Venta de: {this.psSeleccionado}\nSe imprimio el ticket!\nUSTED ACUMULO: {puntos} PUNTOS");
             }
             else
             {
@@ -356,6 +376,11 @@ namespace PlayStationStore
             }
         }
 
+        /// <summary>
+        /// Convierte la cadena string del form en un enumerado de Sony para hacer correctamente la construccion
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>  El Enumerado correspondiente
         public ECapacidad ConvertirAEnum(string str)
         {
             ECapacidad capacidad = ECapacidad.TB1;

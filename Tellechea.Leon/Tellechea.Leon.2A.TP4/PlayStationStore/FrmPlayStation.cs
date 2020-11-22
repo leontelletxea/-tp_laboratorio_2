@@ -25,6 +25,10 @@ namespace PlayStationStore
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Completa los campos del form con la informacion de p
+        /// </summary>
+        /// <param name="p"></param>
         public FrmPlayStation(PlayStation p) : this()
         {
             this.p = p;
@@ -36,6 +40,11 @@ namespace PlayStationStore
             this.cmbModelo.Text = p.Modelo.ToString();
         }
 
+        /// <summary>
+        /// Crea un nuevo objeto de tipo PlayStation con la informacion del formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             string id = this.txtId.Text;

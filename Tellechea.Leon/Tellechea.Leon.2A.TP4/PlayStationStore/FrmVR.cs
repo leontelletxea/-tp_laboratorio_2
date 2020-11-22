@@ -25,6 +25,10 @@ namespace PlayStationStore
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Completa los campos del Form con la informacion de v
+        /// </summary>
+        /// <param name="v"></param>
         public FrmVR(VR v) : this()
         {
             this.v = v;
@@ -36,6 +40,11 @@ namespace PlayStationStore
             this.txtPeso.Text = v.Peso.ToString();
         }
 
+        /// <summary>
+        /// Construye un nuevo objeto VR con la informacion del formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             string id = this.txtId.Text;

@@ -7,9 +7,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades
-{
+{   /// <summary>
+    /// Clase Generica que admite objetos unicamente de tipo Sony o que hereden de Sony
+    /// </summary>
+    /// <typeparam name="T"></typeparam> Objeto de tipo Sony
     public class Tickets<T> where T : Sony
     {
+        /// <summary>
+        ///  Imprime la hora y fecha de la venta en un archivo de texto
+        /// </summary>
+        /// <param name="t"></param> Objeto de tipo Sony
+        /// <returns></returns> True si pudo guardar, false caso contrario
         public static bool ImprimirTiket(T t)
         {
             string path = Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + @"\Tikets.log";

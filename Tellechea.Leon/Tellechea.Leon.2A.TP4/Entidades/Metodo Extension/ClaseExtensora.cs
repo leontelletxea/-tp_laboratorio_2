@@ -8,7 +8,12 @@ namespace Entidades
 {
     public static class ClaseExtensora
     {
-        public static string MetodoExtension(this float f)
+        /// <summary>
+        /// Extiende la clase Single y agrega el signo $ delante del precio en un StringBuilder
+        /// </summary>
+        /// <param name="f"></param> La instancia de Single
+        /// <returns></returns> La cadena con la informacion
+        public static string MetodoExtension(this Single f)
         {
             StringBuilder sb = new StringBuilder();
 

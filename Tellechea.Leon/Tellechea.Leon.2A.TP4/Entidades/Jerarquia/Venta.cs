@@ -9,21 +9,39 @@ using System.Xml.Serialization;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase generica que admite objetos solo de tipo Sony o heredados
+    /// Implementa la interfaz ISerializable
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Venta<T> : ISerializable where T : Sony
     {
         public List<T> listaProductos;
         public int capacidad;
 
+        /// <summary>
+        /// Instancia la lista Generica de T
+        /// </summary>
         public Venta()
         {
             this.listaProductos = new List<T>();
         }
 
+        /// <summary>
+        /// Llama al constructor anterior e inicializa la capacidad de la lista
+        /// </summary>
+        /// <param name="capacidad"></param>
         public Venta(int capacidad) : this()
         {
             this.capacidad = capacidad;
         }
 
+        /// <summary>
+        /// Una venta es igual a un producto si este ya se encuentra en la misma
+        /// </summary>
+        /// <param name="venta"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns> True si son iguales, false caso contrario
         public static bool operator ==(Venta<T> venta, T producto)
         {
             bool retValue = false;
@@ -43,11 +61,23 @@ namespace Entidades
             return retValue;
         }
 
+        /// <summary>
+        /// Una venta es distinta a un producto si este no se encuentra en la misma
+        /// </summary>
+        /// <param name="venta"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns> False si son iguales, true caso contrario
         public static bool operator !=(Venta<T> venta, T producto)
         {
             return !(venta == producto);
         }
 
+        /// <summary>
+        /// Agregra el producto a la venta si este no se encuentra en la misma
+        /// </summary>
+        /// <param name="venta"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns> La Venta
         public static Venta<T> operator +(Venta<T> venta, T producto)
         {
             try
@@ -77,6 +107,12 @@ namespace Entidades
             return venta;
         }
 
+        /// <summary>
+        /// Vende el producto de la venta si este se encuentra en la misma
+        /// </summary>
+        /// <param name="venta"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns> La venta
         public static Venta<T> operator -(Venta<T> venta, T producto)
         {
             try
@@ -107,6 +143,11 @@ namespace Entidades
             return venta;
         }
 
+        /// <summary>
+        /// Guarda la informacion de la lista de productos en un StringBuilder
+        /// </summary>
+        /// <param name="venta"></param> 
+        /// <returns></returns> La cadena con toda la lista de productos
         private static string MostrarVentas(Venta<T> venta)
         {
             StringBuilder sb = new StringBuilder();
@@ -125,6 +166,10 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Hace publicos los datos de Venta
+        /// </summary>
+        /// <returns></returns> MostrarVentas
         public override string ToString()
         {
             return MostrarVentas(this);
@@ -145,6 +190,12 @@ namespace Entidades
             return base.GetHashCode();
         }
 
+        /// <summary>
+        /// Implementada por ISerializable serializa la lista De Sony en un xml
+        /// </summary>
+        /// <param name="archivo"></param> El path
+        /// <param name="datos"></param> La lista a serializar
+        /// <returns></returns> True si lo pudo serializar, false caso contrario
         public bool Serializar(string archivo, List<Sony> datos)
         {
             bool retValue = false;
@@ -167,6 +218,12 @@ namespace Entidades
             return retValue;
         }
 
+        /// <summary>
+        /// Implementada por ISerializable deserializa el xml en out datos
+        /// </summary>
+        /// <param name="archivo"></param> El path
+        /// <param name="datos"></param> La lista donde se guardara el xml deserializado
+        /// <returns></returns> true si pudo deserializar, false caso contrario
         public bool Deserializar(string archivo, out List<Sony> datos)
         {
             bool retValue = false;
@@ -183,7 +240,7 @@ namespace Entidades
             }
             catch (Exception e)
             {
-                throw new ArchivosException("Error al intentar deserializar", e);
+                throw new ArchivosException("Error al intentar deserializar!", e);
             }
 
             return retValue;

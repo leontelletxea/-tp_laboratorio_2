@@ -175,20 +175,24 @@ namespace PlayStationStore
         {
             FrmPlayStation frm = new FrmPlayStation();
             frm.StartPosition = FormStartPosition.CenterScreen;
-            Random random = new Random();
-            float peso = random.Next(100, 500);
 
-            if (frm.ShowDialog() == DialogResult.OK)
+            try
             {
-                DataRow fila = this.dt.NewRow();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    DataRow fila = this.dt.NewRow();
 
-                fila["precio"] = frm.PlayStation.Precio;
-                fila["almacenamiento"] = frm.PlayStation.Almacenamiento;
-                fila["lanzamiento"] = frm.PlayStation.Lanzamiento;
-                fila["modelo"] = frm.PlayStation.Modelo;
-                fila["peso"] = peso;
+                    fila["precio"] = frm.PlayStation.Precio;
+                    fila["almacenamiento"] = frm.PlayStation.Almacenamiento;
+                    fila["lanzamiento"] = frm.PlayStation.Lanzamiento;
+                    fila["modelo"] = frm.PlayStation.Modelo;
 
-                this.dt.Rows.Add(fila);
+                    this.dt.Rows.Add(fila);
+                }
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -197,17 +201,23 @@ namespace PlayStationStore
             FrmVR frm = new FrmVR();
             frm.StartPosition = FormStartPosition.CenterScreen;
 
-            if (frm.ShowDialog() == DialogResult.OK)
+            try
             {
-                DataRow fila = this.dt.NewRow();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    DataRow fila = this.dt.NewRow();
 
-                fila["precio"] = frm.VR.Precio;
-                fila["almacenamiento"] = frm.VR.Almacenamiento;
-                fila["lanzamiento"] = frm.VR.Lanzamiento;
-                fila["peso"] = frm.VR.Peso;
-                fila["modelo"] = 7004;
+                    fila["precio"] = frm.VR.Precio;
+                    fila["almacenamiento"] = frm.VR.Almacenamiento;
+                    fila["lanzamiento"] = frm.VR.Lanzamiento;
+                    fila["peso"] = frm.VR.Peso;
 
-                this.dt.Rows.Add(fila);
+                    this.dt.Rows.Add(fila);
+                }
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -228,7 +238,7 @@ namespace PlayStationStore
                 {
                     int modelo = int.Parse(fila["modelo"].ToString());
 
-                    PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
+                    PlayStation p = new PlayStation(id, precio, ConvertirAEnum(almacenamiento), lanzamiento, modelo);
 
                     FrmPlayStation frm = new FrmPlayStation(p);
 
@@ -246,7 +256,7 @@ namespace PlayStationStore
                 {
                     float peso = float.Parse(fila["peso"].ToString());
 
-                    VR v = new VR(id, precio, almacenamiento, lanzamiento, peso);
+                    VR v = new VR(id, precio, ConvertirAEnum(almacenamiento), lanzamiento, peso);
 
                     FrmVR frm = new FrmVR(v);
 
@@ -269,10 +279,10 @@ namespace PlayStationStore
 
         private void btnVender_Click(object sender, EventArgs e)
         {
-            DataRowView fila = (DataRowView)dataGridView1.CurrentRow.DataBoundItem;
-
             try
             {
+                DataRowView fila = (DataRowView)dataGridView1.CurrentRow.DataBoundItem;
+
                 int id = int.Parse(fila["id"].ToString());
                 float precio = float.Parse(fila["precio"].ToString());
                 string almacenamiento = fila["almacenamiento"].ToString();
@@ -281,7 +291,7 @@ namespace PlayStationStore
                 if (fila["modelo"].ToString() != "")
                 {
                     int modelo = int.Parse(fila["modelo"].ToString());
-                    PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
+                    PlayStation p = new PlayStation(id, precio, ConvertirAEnum(almacenamiento), lanzamiento, modelo);
                     FrmPlayStation frm = new FrmPlayStation(p);
 
                     if (this.EventoVender != null)
@@ -303,7 +313,7 @@ namespace PlayStationStore
                 {
                     float peso = float.Parse(fila["peso"].ToString());
 
-                    VR v = new VR(id, precio, almacenamiento, lanzamiento, peso);
+                    VR v = new VR(id, precio, ConvertirAEnum(almacenamiento), lanzamiento, peso);
 
                     FrmVR frm = new FrmVR(v);
 
@@ -344,6 +354,41 @@ namespace PlayStationStore
             {
                 MessageBox.Show("No se pudo imprimir el ticket!!!");
             }
+        }
+
+        public ECapacidad ConvertirAEnum(string str)
+        {
+            ECapacidad capacidad = ECapacidad.TB1;
+
+            switch (str)
+            {
+                case "MB1":
+                    capacidad = ECapacidad.MB1;
+                    break;
+                case "MB8":
+                    capacidad = ECapacidad.MB8;
+                    break;
+                case "GB250":
+                    capacidad = ECapacidad.GB250;
+                    break;
+                case "GB500":
+                    capacidad = ECapacidad.GB500;
+                    break;
+                case "TB1":
+                    capacidad = ECapacidad.TB1;
+                    break;
+                case "RAM1GB":
+                    capacidad = ECapacidad.RAM1GB;
+                    break;
+                case "RAM2GB":
+                    capacidad = ECapacidad.RAM2GB;
+                    break;
+                case "RAM3GB":
+                    capacidad = ECapacidad.RAM3GB;
+                    break;
+            }
+
+            return capacidad;
         }
     }
 }

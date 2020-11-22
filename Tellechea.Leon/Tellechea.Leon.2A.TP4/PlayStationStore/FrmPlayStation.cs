@@ -41,7 +41,16 @@ namespace PlayStationStore
             string id = this.txtId.Text;
             id = id == "" ? "0" : id;
 
-            this.p = new PlayStation(int.Parse(id), float.Parse(this.txtPrecio.Text), this.cmbAlmacenamiento.Text, this.txtLanzamiento.Text, int.Parse(this.cmbModelo.Text));
+            FrmStore f = new FrmStore();
+
+            try
+            {
+                this.p = new PlayStation(int.Parse(id), float.Parse(this.txtPrecio.Text), f.ConvertirAEnum(this.cmbAlmacenamiento.Text), this.txtLanzamiento.Text, int.Parse(this.cmbModelo.Text));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
 

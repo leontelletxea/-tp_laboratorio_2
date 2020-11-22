@@ -14,7 +14,7 @@ namespace Entidades
         {
         }
 
-        public PlayStation(int id, float precio, string almacenamiento, string lanzamiento, int modelo)
+        public PlayStation(int id, float precio, ECapacidad almacenamiento, string lanzamiento, int modelo)
             : base(id, precio, almacenamiento, lanzamiento)
         {
             this.modelo = modelo;

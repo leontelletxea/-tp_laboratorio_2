@@ -133,30 +133,31 @@
             // 
             this.cmbModelo.FormattingEnabled = true;
             this.cmbModelo.Items.AddRange(new object[] {
-            "5",
-            "4",
-            "3",
+            "1",
             "2",
-            "1"});
+            "3",
+            "4",
+            "5"});
             this.cmbModelo.Location = new System.Drawing.Point(49, 248);
             this.cmbModelo.Name = "cmbModelo";
             this.cmbModelo.Size = new System.Drawing.Size(216, 21);
             this.cmbModelo.TabIndex = 32;
+            this.cmbModelo.SelectedIndex = 4;
             // 
             // cmbAlmacenamiento
             // 
             this.cmbAlmacenamiento.FormattingEnabled = true;
             this.cmbAlmacenamiento.Items.AddRange(new object[] {
+            "MB1",
             "MB8",
-            "MB16",
             "GB250",
             "GB500",
-            "TB1",
-            "TB2"});
+            "TB1"});
             this.cmbAlmacenamiento.Location = new System.Drawing.Point(49, 151);
             this.cmbAlmacenamiento.Name = "cmbAlmacenamiento";
             this.cmbAlmacenamiento.Size = new System.Drawing.Size(216, 21);
             this.cmbAlmacenamiento.TabIndex = 33;
+            this.cmbAlmacenamiento.SelectedIndex = 4;
             // 
             // FrmPlayStation
             // 

@@ -147,6 +147,7 @@
             this.cmbAlmacenamiento.Name = "cmbAlmacenamiento";
             this.cmbAlmacenamiento.Size = new System.Drawing.Size(216, 21);
             this.cmbAlmacenamiento.TabIndex = 44;
+            this.cmbAlmacenamiento.SelectedIndex = 2;
             // 
             // FrmVR
             // 

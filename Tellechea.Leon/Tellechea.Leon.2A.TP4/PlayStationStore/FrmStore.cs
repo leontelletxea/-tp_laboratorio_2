@@ -119,20 +119,20 @@ namespace PlayStationStore
         private void ConfigurarGrilla()
         {
             // Coloco color de fondo para las filas
-            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Gray;
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(201, 202, 209);
 
             // Alterno colores
-            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray; // Color.FromArgb(138, 184, 187)
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(140, 141, 146);
 
             // Pongo color de fondo a la grilla
-            this.dataGridView1.BackgroundColor = Color.Blue;
+            this.dataGridView1.BackgroundColor = Color.FromArgb(11, 31, 180);
 
             // Defino fuente para el encabezado y alineación del encabezado
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Regular);
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // Defino el color de las lineas de separación
-            this.dataGridView1.GridColor = Color.Black;
+            this.dataGridView1.GridColor = Color.FromArgb(17, 17, 17);
 
             // La grilla será de sólo lectura
             this.dataGridView1.ReadOnly = false;
@@ -147,8 +147,8 @@ namespace PlayStationStore
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // Indico el color de la fila seleccionada
-            this.dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Lime;
-            this.dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(66, 87, 241);
+            this.dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(17, 17, 17);
 
             // No permito modificar desde la grilla
             this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -175,6 +175,8 @@ namespace PlayStationStore
         {
             FrmPlayStation frm = new FrmPlayStation();
             frm.StartPosition = FormStartPosition.CenterScreen;
+            Random random = new Random();
+            float peso = random.Next(100, 500);
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -184,6 +186,7 @@ namespace PlayStationStore
                 fila["almacenamiento"] = frm.PlayStation.Almacenamiento;
                 fila["lanzamiento"] = frm.PlayStation.Lanzamiento;
                 fila["modelo"] = frm.PlayStation.Modelo;
+                fila["peso"] = peso;
 
                 this.dt.Rows.Add(fila);
             }
@@ -202,6 +205,7 @@ namespace PlayStationStore
                 fila["almacenamiento"] = frm.VR.Almacenamiento;
                 fila["lanzamiento"] = frm.VR.Lanzamiento;
                 fila["peso"] = frm.VR.Peso;
+                fila["modelo"] = 7004;
 
                 this.dt.Rows.Add(fila);
             }

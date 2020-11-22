@@ -122,7 +122,7 @@ namespace PlayStationStore
             this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Gray;
 
             // Alterno colores
-            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray; // Color.FromArgb(138, 184, 187)
 
             // Pongo color de fondo a la grilla
             this.dataGridView1.BackgroundColor = Color.Blue;
@@ -213,46 +213,53 @@ namespace PlayStationStore
 
             DataRow fila = this.dt.Rows[i];
 
-            int id = int.Parse(fila["id"].ToString());
-            float precio = float.Parse(fila["precio"].ToString());
-            string almacenamiento = fila["almacenamiento"].ToString();
-            string lanzamiento = fila["lanzamiento"].ToString();
-
-            if (fila["modelo"].ToString() != "")
+            try
             {
-                int modelo = int.Parse(fila["modelo"].ToString());
+               int id = int.Parse(fila["id"].ToString());
+                float precio = float.Parse(fila["precio"].ToString());
+                string almacenamiento = fila["almacenamiento"].ToString();
+                string lanzamiento = fila["lanzamiento"].ToString();
 
-                PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
-
-                FrmPlayStation frm = new FrmPlayStation(p);
-
-                frm.StartPosition = FormStartPosition.CenterScreen;
-
-                if (frm.ShowDialog() == DialogResult.OK)
+                if (fila["modelo"].ToString() != "")
                 {
-                    fila["precio"] = frm.PlayStation.Precio;
-                    fila["almacenamiento"] = frm.PlayStation.Almacenamiento;
-                    fila["lanzamiento"] = frm.PlayStation.Lanzamiento;
-                    fila["modelo"] = frm.PlayStation.Modelo;
+                    int modelo = int.Parse(fila["modelo"].ToString());
+
+                    PlayStation p = new PlayStation(id, precio, almacenamiento, lanzamiento, modelo);
+
+                    FrmPlayStation frm = new FrmPlayStation(p);
+
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        fila["precio"] = frm.PlayStation.Precio;
+                        fila["almacenamiento"] = frm.PlayStation.Almacenamiento;
+                        fila["lanzamiento"] = frm.PlayStation.Lanzamiento;
+                        fila["modelo"] = frm.PlayStation.Modelo;
+                    }
+                }
+                else
+                {
+                    float peso = float.Parse(fila["peso"].ToString());
+
+                    VR v = new VR(id, precio, almacenamiento, lanzamiento, peso);
+
+                    FrmVR frm = new FrmVR(v);
+
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        fila["precio"] = frm.VR.Precio;
+                        fila["almacenamiento"] = frm.VR.Almacenamiento;
+                        fila["lanzamiento"] = frm.VR.Lanzamiento;
+                        fila["peso"] = frm.VR.Peso;
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                float peso = float.Parse(fila["peso"].ToString());
-
-                VR v = new VR(id, precio, almacenamiento, lanzamiento, peso);
-
-                FrmVR frm = new FrmVR(v);
-
-                frm.StartPosition = FormStartPosition.CenterScreen;
-
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    fila["precio"] = frm.VR.Precio;
-                    fila["almacenamiento"] = frm.VR.Almacenamiento;
-                    fila["lanzamiento"] = frm.VR.Lanzamiento;
-                    fila["peso"] = frm.VR.Peso;
-                }
+                MessageBox.Show(ex.Message);
             }
         }
 

@@ -101,7 +101,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmGif";
-            this.Text = "Encuesta De Satisfaccion";
+            this.Text = "Encuesta De Satisfacción";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -120,8 +120,10 @@
             this.Controls.Add(this.btnAgregarPs);
             this.Controls.Add(this.btnSincronizar);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmStore";
-            this.Text = "Form1";
+            this.Text = "PlayStation Store";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

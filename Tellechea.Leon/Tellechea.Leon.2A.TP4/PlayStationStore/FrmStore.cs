@@ -142,6 +142,7 @@ namespace PlayStationStore
             this.dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(17, 17, 17);
             this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.AllowUserToAddRows = false;
         }
 
         /// <summary>

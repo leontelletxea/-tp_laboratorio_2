@@ -176,8 +176,10 @@
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmPlayStation";
-            this.Text = "FrmSony";
+            this.Text = "Agregar PlayStation";
             this.Click += new System.EventHandler(this.btnAceptar_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

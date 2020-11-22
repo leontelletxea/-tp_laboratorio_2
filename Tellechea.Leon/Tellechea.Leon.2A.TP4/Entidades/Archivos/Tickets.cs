@@ -24,8 +24,10 @@ namespace Entidades
             bool retValue = false;
 
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("*************************");
             sb.AppendLine($"Hora: {DateTime.Now}");
             sb.AppendLine($"Total: ${t.Precio}");
+            sb.AppendLine("*************************");
 
             try
             {
